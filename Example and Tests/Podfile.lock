@@ -1,0 +1,40 @@
+PODS:
+  - Alamofire (3.3.0)
+  - Gloss (0.7.1)
+  - Moya (6.4.0):
+    - Moya/Core (= 6.4.0)
+  - Moya-Gloss (0.1.0):
+    - Moya-Gloss/Core (= 0.1.0)
+  - Moya-Gloss/Core (0.1.0):
+    - Gloss (~> 0.7)
+    - Moya
+  - Moya-Gloss/RxSwift (0.1.0):
+    - Moya-Gloss/Core
+    - Moya/RxSwift
+    - RxSwift (~> 2.0)
+  - Moya/Core (6.4.0):
+    - Alamofire (~> 3.0)
+    - Result (~> 2.0)
+  - Moya/RxSwift (6.4.0):
+    - Moya/Core
+    - RxSwift (~> 2.0)
+  - Result (2.0.0)
+  - RxSwift (2.3.1)
+
+DEPENDENCIES:
+  - Moya-Gloss (from `../`)
+  - Moya-Gloss/RxSwift (from `../`)
+
+EXTERNAL SOURCES:
+  Moya-Gloss:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: 9054db4a1b1ca9e363223183e01cea380159a27c
+  Gloss: e674d7aa06a7e292a591d0d39a759b826daf503e
+  Moya: 4d526954c8afd79820991393d40d7d8af756ceee
+  Moya-Gloss: acfb179750666b82282a51e02a52b0fcff61f223
+  Result: 9e75e1111c774c6ac594e14907b15057053a7959
+  RxSwift: 829b2843e9eddc77a02cb3f5117f0d55f8f646f1
+
+COCOAPODS: 0.39.0

@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
 
   s.homepage         = "https://github.com/spxrogers/Moya-Gloss"
   s.license          = { :type => "MIT", :file => "LICENSE" }
-  s.author           = { "steven rogers" => "spxrogers@gmail.com" }
+  s.author           = { "Steven Rogers" => "me@srogers.net" }
   s.source           = { :git => "https://github.com/spxrogers/Moya-Gloss.git", :tag => s.version.to_s }
   s.social_media_url = "https://twitter.com/spxrogers"
 
@@ -31,14 +31,14 @@ Pod::Spec.new do |s|
 
   s.subspec "Core" do |ss|
     ss.source_files  = "Source/*.swift"
-    ss.dependency "Moya"
+    ss.dependency "Moya", "~> 6.0"
     ss.dependency "Gloss", "~> 0.7"
     ss.framework  = "Foundation"
   end
 
   s.subspec "RxSwift" do |ss|
     ss.source_files = "Source/RxSwift/*.swift"
-    ss.dependency "Moya/RxSwift"
+    ss.dependency "Moya/RxSwift", "~> 6.0"
     ss.dependency "Moya-Gloss/Core"
     ss.dependency "RxSwift", "~> 2.0"
   end
