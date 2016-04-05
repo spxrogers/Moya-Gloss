@@ -10,5 +10,28 @@ import Moya
 import Gloss
 
 public extension Response {
-  // todo
+
+  /// Maps response data into a model object implementing the Decodable protocol.
+  /// Throws a JSONMapping error on failure.
+  public func mapObject<T: Decodable>() throws -> T {
+    guard
+      let json = try mapJSON() as? JSON,
+      let result = T(json: json)
+      else {
+        throw Error.JSONMapping(self)
+    }
+    return result
+  }
+
+  /// Maps the response data into an array of model objects implementing the Decodable protocol.
+  /// Throws a JSONMapping error on failure.
+  public func mapArray<T: Decodable>() throws -> [T] {
+    guard
+      let json = try mapJSON() as? [JSON]
+      else {
+        throw Error.JSONMapping(self)
+    }
+    return [T].fromJSONArray(json)
+  }
+
 }
