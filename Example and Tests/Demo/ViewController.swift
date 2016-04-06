@@ -28,14 +28,14 @@ class ViewController: UIViewController {
   @IBAction func mapPersonPressed(sender: UIButton) {
     stubbedProvider.request(object) { (result) in
       switch result {
-      case let .Success(response):
+      case .Success(let response):
         do {
           let person = try response.mapObject(Person)
           self.text("Found person: \(person)")
         } catch {
           self.text("Error mapping object")
         }
-      case let .Failure(err):
+      case .Failure(let err):
         self.text("Failure: \(err)")
       }
     }

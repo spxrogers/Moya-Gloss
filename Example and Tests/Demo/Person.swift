@@ -22,3 +22,10 @@ struct Person: Decodable {
     self.age = "age" <~~ json
   }
 }
+
+// MARK: Equatable for unit tests
+
+extension Person: Equatable { }
+func ==(lhs: Person, rhs: Person) -> Bool {
+  return lhs.name == rhs.name && lhs.age == rhs.age
+}

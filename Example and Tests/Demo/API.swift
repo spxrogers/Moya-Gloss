@@ -15,6 +15,8 @@ let rxStubbedProvider = RxMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.Imm
 enum ExampleAPI {
   case GetObject
   case GetArray
+  case GetBadObject
+  case GetBadFormat
 }
 
 extension ExampleAPI: TargetType {
@@ -26,6 +28,10 @@ extension ExampleAPI: TargetType {
       return "/person"
     case .GetArray:
       return "/people"
+    case .GetBadObject:
+      return "/badobject"
+    case .GetBadFormat:
+      return "/badformat"
     }
   }
 
@@ -43,6 +49,10 @@ extension ExampleAPI: TargetType {
       return stubbedResponse("person")
     case .GetArray:
       return stubbedResponse("people")
+    case .GetBadObject:
+      return stubbedResponse("bad_person")
+    case .GetBadFormat:
+      return stubbedResponse("bad_format")
     }
   }
 }
