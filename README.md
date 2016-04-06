@@ -31,8 +31,8 @@ import Gloss
 
 struct Person: Decodable {
 
-  var name: String
-  var age: Int?
+  let name: String
+  let age: Int?
 
   init?(json: JSON) {
     guard let name: String = "name" <~~ json
@@ -48,18 +48,17 @@ struct Person: Decodable {
 
 
 ```swift
-provider.request(API.ExampleGet) { (result) -> () in
+provider.request(ExampleAPI.GetObject) { (result) in
   switch result {
-    case let .Success(response):
-      do {
-        let person = try response.mapObject(Person)
-          print("Found person: \(person)")
-      } catch {
-          print(error)
-      }
-    case let .Failure(error):
-      print(error)
+  case .Success(let response):
+    do {
+      let person = try response.mapObject(Person)
+      print("Found person: \(person)")
+    } catch {
+        print(error)
     }
+  case .Failure(let error):
+    print(error)
   }
 }
 ```
@@ -67,9 +66,9 @@ provider.request(API.ExampleGet) { (result) -> () in
 ## 2. With RxSwift
 
 ```swift
-provider.request(API.ExampleGet)
+provider.request(ExampleAPI.GetArray)
   .mapObject(Person)
-  .subscribe { event -> Void in
+  .subscribe { (event) in
     switch event {
     case .Next(let person):
       print("Found person: \(person)")
@@ -79,6 +78,7 @@ provider.request(API.ExampleGet)
       break
     }
   }
+  .addDisposableTo(your_preferred_dispose_bag)
 ```
 
 # Contributing
