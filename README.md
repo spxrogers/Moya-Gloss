@@ -2,7 +2,7 @@ Moya-Gloss
 ============
 [![CocoaPods](https://img.shields.io/cocoapods/v/Moya-Gloss.svg)](https://github.com/spxrogers/Moya-Gloss)
 
-[Gloss](https://github.com/hkellaway/Gloss) bindings for [Moya](https://github.com/Moya/Moya) for convenient JSON serialization.
+[Gloss](https://github.com/hkellaway/Gloss) bindings for [Moya](https://github.com/Moya/Moya) for fabulous JSON serialization.
 Supports [RxSwift](https://github.com/ReactiveX/RxSwift/) bindings as well.
 
 # Installation
@@ -88,6 +88,14 @@ Issues and pull requests are welcome!
 # Author
 
 Steven Rogers [@spxrogers](https://twitter.com/spxrogers)
+
+# Thanks ... 
+
+... to [Harlan Kellaway](http://harlankellaway.com) for creating Gloss, my preferred JSON library :)
+
+... to the [Moya](https://github.com/Moya) team for a wonderful network library.
+
+.. and finally, to the authors of the existing Moya community extensions for inspiring me to make one for Gloss.
 
 # License
 
