@@ -6,6 +6,7 @@ use_frameworks!
 def core()
   pod 'Moya-Gloss', :path => '../'
   pod 'Moya-Gloss/RxSwift', :path => '../'
+  pod 'Moya-Gloss/ReactiveCocoa', :path => '../'
 end
 
 # Testing Libraries

@@ -17,8 +17,8 @@ public extension Response {
     guard
       let json = try mapJSON() as? JSON,
       let result = T(json: json)
-      else {
-        throw Error.JSONMapping(self)
+    else {
+      throw Error.JSONMapping(self)
     }
     return result
   }
@@ -28,8 +28,8 @@ public extension Response {
   public func mapArray<T: Decodable>(type: T.Type) throws -> [T] {
     guard
       let json = try mapJSON() as? [JSON]
-      else {
-        throw Error.JSONMapping(self)
+    else {
+      throw Error.JSONMapping(self)
     }
     return [T].fromJSONArray(json)
   }

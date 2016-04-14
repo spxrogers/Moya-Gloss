@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import RxSwift
+import ReactiveCocoa
 import Moya_Gloss
 
 class ViewController: UIViewController {
@@ -91,5 +92,36 @@ class ViewController: UIViewController {
       .addDisposableTo(disposeBag)
   }
 
-}
+  // MARK: - Moya with ReactiveCocoa Example
 
+  @IBAction func racMapPerson(sender: UIButton) {
+    racStubbedProvider.request(object)
+      .mapObject(Person)
+      .start { (event) in
+        switch event {
+        case .Next(let person):
+          self.text("Found person: \(person)")
+        case .Failed(let err):
+          self.text("Failure: \(err)")
+        default:
+          break
+        }
+      }
+  }
+
+  @IBAction func racMapPeople(sender: UIButton) {
+    racStubbedProvider.request(array)
+      .mapArray(Person)
+      .start { (event) in
+        switch event {
+        case .Next(let people):
+          self.text("Found people: \(people)")
+        case .Failed(let err):
+          self.text("Failure: \(err)")
+        default:
+          break
+        }
+      }
+  }
+
+}

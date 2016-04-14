@@ -1,10 +1,3 @@
-//
-//  ResponseTests.swift
-//  Demo
-//
-//  Created by steven rogers on 4/6/16.
-//  Copyright (c) 2016 Steven Rogers. All rights resereved.
-//
 
 @testable import Demo
 import Quick

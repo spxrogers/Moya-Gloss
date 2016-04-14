@@ -22,6 +22,7 @@
 		B0A52E7E1CB586560042C221 /* people.json in Resources */ = {isa = PBXBuildFile; fileRef = B0A52E7C1CB586560042C221 /* people.json */; };
 		B0A52E7F1CB586560042C221 /* person.json in Resources */ = {isa = PBXBuildFile; fileRef = B0A52E7D1CB586560042C221 /* person.json */; };
 		B0A52E811CB588190042C221 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A52E801CB588190042C221 /* Person.swift */; };
+		B0E6B2531CC00CA60088B173 /* SignalProducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E6B2521CC00CA60088B173 /* SignalProducerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		B0A52E7C1CB586560042C221 /* people.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = people.json; sourceTree = "<group>"; };
 		B0A52E7D1CB586560042C221 /* person.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = person.json; sourceTree = "<group>"; };
 		B0A52E801CB588190042C221 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		B0E6B2521CC00CA60088B173 /* SignalProducerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProducerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			children = (
 				B09CDBFB1CB5C4C000F2C733 /* ResponseTests.swift */,
 				B09CDC011CB5D1D600F2C733 /* ObservableTests.swift */,
+				B0E6B2521CC00CA60088B173 /* SignalProducerTests.swift */,
 				B0996BDD1CB5BC67003A12DF /* Info.plist */,
 			);
 			path = Tests;
@@ -371,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0E6B2531CC00CA60088B173 /* SignalProducerTests.swift in Sources */,
 				B09CDC021CB5D1D600F2C733 /* ObservableTests.swift in Sources */,
 				B09CDBFC1CB5C4C000F2C733 /* ResponseTests.swift in Sources */,
 			);

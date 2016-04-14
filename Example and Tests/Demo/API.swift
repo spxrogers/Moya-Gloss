@@ -3,7 +3,7 @@
 //  Demo
 //
 //  Created by steven rogers on 4/5/16.
-// Copyright (c) 2016 Steven Rogers. All rights resereved.
+//  Copyright (c) 2016 Steven Rogers. All rights resereved.
 //
 
 import Foundation
@@ -11,6 +11,7 @@ import Moya
 
 let stubbedProvider = MoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.ImmediatelyStub)
 let rxStubbedProvider = RxMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.ImmediatelyStub)
+let racStubbedProvider = ReactiveCocoaMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.ImmediatelyStub)
 
 enum ExampleAPI {
   case GetObject

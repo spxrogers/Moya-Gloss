@@ -3,20 +3,19 @@
 import Quick
 import Nimble
 import Moya
-import RxSwift
+import ReactiveCocoa
 import Moya_Gloss
 
-class ObservableGlossSpec: QuickSpec {
+class SignalProducerGlossSpec: QuickSpec {
   override func spec() {
     let getObject = ExampleAPI.GetObject
     let getArray = ExampleAPI.GetArray
     let getBadObject = ExampleAPI.GetBadObject
     let getBadFormat = ExampleAPI.GetBadFormat
-    let disposeBag = DisposeBag()
 
-    var provider: RxMoyaProvider<ExampleAPI>!
-    beforeEach {
-      provider = RxMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.ImmediatelyStub)
+    var provider: ReactiveCocoaMoyaProvider<ExampleAPI>!
+    beforeEach { 
+      provider = ReactiveCocoaMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.ImmediatelyStub)
     }
 
     it("handles a core object request") {
@@ -26,17 +25,18 @@ class ObservableGlossSpec: QuickSpec {
       waitUntil(timeout: 5) { done in
         provider.request(getObject)
           .mapObject(Person)
-          .subscribe { (event) in
+          .start { (event) in
             switch event {
             case .Next(let person):
               equal = steven == person
-            case .Error(_):
+            case .Failed(_):
               equal = false
             case .Completed:
               done()
+            default:
+              break
             }
-          }
-          .addDisposableTo(disposeBag)
+        }
       }
       expect(equal).to(beTruthy())
     }
@@ -50,17 +50,18 @@ class ObservableGlossSpec: QuickSpec {
       waitUntil(timeout: 5) { done in
         provider.request(getArray)
           .mapArray(Person)
-          .subscribe{ (event) in
+          .start { (event) in
             switch event {
             case .Next(let resultPeople):
               equal = people == resultPeople
-            case .Error(_):
+            case .Failed(_):
               equal = false
             case .Completed:
               done()
+            default:
+              break
             }
           }
-          .addDisposableTo(disposeBag)
       }
       expect(equal).to(beTruthy())
     }
@@ -71,18 +72,17 @@ class ObservableGlossSpec: QuickSpec {
       waitUntil(timeout: 5) { done in
         provider.request(getBadObject)
           .mapObject(Person)
-          .subscribe{ (event) in
+          .start { (event) in
             switch event {
             case .Next(_):
               failedWhenExpected = false
-            case .Error(_):
+            case .Failed(_):
               failedWhenExpected = true
               done()
-            case .Completed:
+            default:
               done()
             }
           }
-          .addDisposableTo(disposeBag)
       }
       expect(failedWhenExpected).to(beTruthy())
     }
@@ -93,18 +93,18 @@ class ObservableGlossSpec: QuickSpec {
       waitUntil(timeout: 5) { done in
         provider.request(getBadFormat)
           .mapObject(Person)
-          .subscribe{ (event) in
+          .start { (event) in
             switch event {
             case .Next(_):
               failedWhenExpected = false
-            case .Error(_):
+            case .Failed(_):
               failedWhenExpected = true
               done()
-            case .Completed:
+            default:
               done()
             }
           }
-          .addDisposableTo(disposeBag)
+
       }
       expect(failedWhenExpected).to(beTruthy())
     }
@@ -115,18 +115,17 @@ class ObservableGlossSpec: QuickSpec {
       waitUntil(timeout: 5) { done in
         provider.request(getBadFormat)
           .mapArray(Person)
-          .subscribe{ (event) in
+          .start { (event) in
             switch event {
             case .Next(_):
               failedWhenExpected = false
-            case .Error(_):
+            case .Failed(_):
               failedWhenExpected = true
               done()
-            case .Completed:
+            default:
               done()
             }
           }
-          .addDisposableTo(disposeBag)
       }
       expect(failedWhenExpected).to(beTruthy())
     }

@@ -3,7 +3,7 @@ Moya-Gloss
 [![CocoaPods](https://img.shields.io/cocoapods/v/Moya-Gloss.svg)](https://github.com/spxrogers/Moya-Gloss)
 
 [Gloss](https://github.com/hkellaway/Gloss) bindings for [Moya](https://github.com/Moya/Moya) for fabulous JSON serialization.
-Supports [RxSwift](https://github.com/ReactiveX/RxSwift/) bindings as well.
+Supports [RxSwift](https://github.com/ReactiveX/RxSwift/) and [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa/) bindings as well.
 
 # Installation
 
@@ -14,10 +14,11 @@ Add to your Podfile:
 pod 'Moya-Gloss'
 ```
 
-The subspec if you want to use the bindings over RxSwift.
+The subspec(s) if you want to use the bindings over RxSwift or ReactiveCocoa.
 
 ```ruby
 pod 'Moya-Gloss/RxSwift'
+pod 'Moya-Gloss/ReactiveCocoa'
 ```
 
 # Usage
@@ -44,7 +45,7 @@ struct Person: Decodable {
 }
 ```
 
-## 1. Without RxSwift
+## 1. Example
 
 
 ```swift
@@ -55,7 +56,7 @@ provider.request(ExampleAPI.GetObject) { (result) in
       let person = try response.mapObject(Person)
       print("Found person: \(person)")
     } catch {
-        print(error)
+      print(error)
     }
   case .Failure(let error):
     print(error)
@@ -63,10 +64,10 @@ provider.request(ExampleAPI.GetObject) { (result) in
 }
 ```
 
-## 2. With RxSwift
+## 2. Example With RxSwift
 
 ```swift
-provider.request(ExampleAPI.GetArray)
+provider.request(ExampleAPI.GetObject)
   .mapObject(Person)
   .subscribe { (event) in
     switch event {
@@ -79,6 +80,23 @@ provider.request(ExampleAPI.GetArray)
     }
   }
   .addDisposableTo(your_preferred_dispose_bag)
+```
+
+## 3. Example With ReactiveCocoa
+
+```swift
+provider.request(ExampleAPI.GetObject)
+  .mapObject(Person)
+  .start { (event) in
+    switch event {
+    case .Next(let person):
+      print("Found person: \(person)")
+    case .Failed(let error):
+      print(error)
+    default:
+      break
+    }
+  }
 ```
 
 # Contributing
@@ -95,7 +113,7 @@ Steven Rogers [@spxrogers](https://twitter.com/spxrogers)
 
 ... to the [Moya](https://github.com/Moya) team for a wonderful network library.
 
-.. and finally, to the authors of the existing Moya community extensions for inspiring me to make one for Gloss.
+... and finally, to the authors of the existing Moya community extensions for inspiring me to make one for Gloss.
 
 # License
 
