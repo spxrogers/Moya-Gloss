@@ -1,6 +1,6 @@
 Moya-Gloss
 ============
-[![CocoaPods](https://img.shields.io/cocoapods/v/Moya-Gloss.svg)](https://github.com/spxrogers/Moya-Gloss)
+[![CocoaPods](https://img.shields.io/cocoapods/v/Moya-Gloss.svg)](http://cocoapods.org/pods/Moya-Gloss)
 
 [Gloss](https://github.com/hkellaway/Gloss) bindings for [Moya](https://github.com/Moya/Moya) for fabulous JSON serialization.
 Supports [RxSwift](https://github.com/ReactiveX/RxSwift/) and [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa/) bindings as well.
