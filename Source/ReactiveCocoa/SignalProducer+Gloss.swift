@@ -10,7 +10,7 @@ import ReactiveCocoa
 import Moya
 import Gloss
 
-extension SignalProducerType where Value == Moya.Response, Error == Moya.Error {
+public extension SignalProducerType where Value == Moya.Response, Error == Moya.Error {
 
   /// Maps data received from the signal into a model object implementing the Decodable protocol.
   /// The signal errors on conversion failure.

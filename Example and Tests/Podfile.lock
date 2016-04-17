@@ -3,16 +3,16 @@ PODS:
   - Gloss (0.7.1)
   - Moya (6.4.0):
     - Moya/Core (= 6.4.0)
-  - Moya-Gloss (1.1.0):
-    - Moya-Gloss/Core (= 1.1.0)
-  - Moya-Gloss/Core (1.1.0):
+  - Moya-Gloss (1.1.1):
+    - Moya-Gloss/Core (= 1.1.1)
+  - Moya-Gloss/Core (1.1.1):
     - Gloss (~> 0.7)
     - Moya (~> 6.0)
-  - Moya-Gloss/ReactiveCocoa (1.1.0):
+  - Moya-Gloss/ReactiveCocoa (1.1.1):
     - Moya-Gloss/Core
     - Moya/ReactiveCocoa
     - ReactiveCocoa
-  - Moya-Gloss/RxSwift (1.1.0):
+  - Moya-Gloss/RxSwift (1.1.1):
     - Moya-Gloss/Core
     - Moya/RxSwift (~> 6.0)
     - RxSwift (~> 2.0)
@@ -50,13 +50,13 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   Moya-Gloss:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
   Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
   Gloss: e674d7aa06a7e292a591d0d39a759b826daf503e
   Moya: 4d526954c8afd79820991393d40d7d8af756ceee
-  Moya-Gloss: 2bbfc1b123811d02b7d1366a23825b75a6e0dbad
+  Moya-Gloss: 8741b151687ba6b1fb71bb0694bf4cd4a2b70569
   Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
   Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
   ReactiveCocoa: d70004d7a366a7b8e87e60ce2347182c77701949
