@@ -1,6 +1,8 @@
 Moya-Gloss
 ============
 [![CocoaPods](https://img.shields.io/cocoapods/v/Moya-Gloss.svg)](http://cocoapods.org/pods/Moya-Gloss)
+[![Carthage
+compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 [Gloss](https://github.com/hkellaway/Gloss) bindings for [Moya](https://github.com/Moya/Moya) for fabulous JSON serialization.
 Supports [RxSwift](https://github.com/ReactiveX/RxSwift/) and [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa/) bindings as well.
@@ -10,6 +12,7 @@ Supports [RxSwift](https://github.com/ReactiveX/RxSwift/) and [ReactiveCocoa](ht
 ## CocoaPods
 
 Add to your Podfile:
+
 ```ruby
 pod 'Moya-Gloss'
 ```
@@ -19,6 +22,19 @@ The subspec(s) if you want to use the bindings over RxSwift or ReactiveCocoa.
 ```ruby
 pod 'Moya-Gloss/RxSwift'
 pod 'Moya-Gloss/ReactiveCocoa'
+```
+
+## Carthage
+
+Carthage lists `Moya` and `Gloss` as explicit dependencies, so it's only
+necessary to list the following in your Cartfile and it will pull down all
+three libraries. Carthage will generate three frameworks, `MoyaGloss`,
+`RxMoyaGloss`, and `ReactiveMoyaGloss` (following the naming convention of the
+three generated frameworks from Moya). It is only necessary to import one of
+these variations each.
+
+```ruby
+github "spxrogers/Moya-Gloss"
 ```
 
 # Usage
@@ -119,3 +135,5 @@ Steven Rogers [@spxrogers](https://twitter.com/spxrogers)
 
 Moya-Gloss is released under an MIT license. See LICENSE for more information.
 
+![Chuck Norris likes a permissive
+license.](http://i.giphy.com/BIuuwHRNKs15C.gif)
