@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46FAB5271CEFEFC00011CDF2 /* Observable+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01E394B1CC44A9A009D9FC9 /* Observable+Gloss.swift */; };
+		46FAB5281CEFEFC30011CDF2 /* SignalProducer+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01E39481CC44A9A009D9FC9 /* SignalProducer+Gloss.swift */; };
 		B01E393F1CC44A42009D9FC9 /* MoyaGloss.h in Headers */ = {isa = PBXBuildFile; fileRef = B01E393E1CC44A42009D9FC9 /* MoyaGloss.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B01E394C1CC44A9A009D9FC9 /* SignalProducer+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01E39481CC44A9A009D9FC9 /* SignalProducer+Gloss.swift */; };
 		B01E394D1CC44A9A009D9FC9 /* Response+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01E39491CC44A9A009D9FC9 /* Response+Gloss.swift */; };
-		B01E394E1CC44A9A009D9FC9 /* Observable+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01E394B1CC44A9A009D9FC9 /* Observable+Gloss.swift */; };
 		B01E397E1CC451B8009D9FC9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01E39751CC451B8009D9FC9 /* Alamofire.framework */; };
 		B01E397F1CC451B8009D9FC9 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01E39761CC451B8009D9FC9 /* Gloss.framework */; };
 		B01E39801CC451B8009D9FC9 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01E39771CC451B8009D9FC9 /* Moya.framework */; };
@@ -331,9 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B01E394C1CC44A9A009D9FC9 /* SignalProducer+Gloss.swift in Sources */,
 				B01E394D1CC44A9A009D9FC9 /* Response+Gloss.swift in Sources */,
-				B01E394E1CC44A9A009D9FC9 /* Observable+Gloss.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46FAB5271CEFEFC00011CDF2 /* Observable+Gloss.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46FAB5281CEFEFC30011CDF2 /* SignalProducer+Gloss.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +606,7 @@
 				B0D2DE6D1CC45B5500577F82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
