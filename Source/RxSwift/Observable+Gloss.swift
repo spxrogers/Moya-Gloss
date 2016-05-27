@@ -9,6 +9,7 @@ import Foundation
 import RxSwift
 import Moya
 import Gloss
+import MoyaGloss
 
 /// Extension for transforming Responses into Decodable object via Gloss
 public extension ObservableType where E == Response {
