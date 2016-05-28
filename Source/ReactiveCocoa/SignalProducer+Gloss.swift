@@ -9,6 +9,7 @@ import Foundation
 import ReactiveCocoa
 import Moya
 import Gloss
+import MoyaGloss
 
 public extension SignalProducerType where Value == Moya.Response, Error == Moya.Error {
 
