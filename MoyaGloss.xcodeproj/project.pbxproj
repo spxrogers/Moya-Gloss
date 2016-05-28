@@ -19,6 +19,8 @@
 		B01E39951CC45AFF009D9FC9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01E39751CC451B8009D9FC9 /* Alamofire.framework */; };
 		B01E39961CC45AFF009D9FC9 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01E39761CC451B8009D9FC9 /* Gloss.framework */; };
 		B01E39981CC45AFF009D9FC9 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01E397A1CC451B8009D9FC9 /* Result.framework */; };
+		B0889DD91CF950E000EB48EA /* Response+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01E39491CC44A9A009D9FC9 /* Response+Gloss.swift */; };
+		B0889DDA1CF950E100EB48EA /* Response+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01E39491CC44A9A009D9FC9 /* Response+Gloss.swift */; };
 		B0D2DE6A1CC45B5500577F82 /* ReactiveMoyaGloss.h in Headers */ = {isa = PBXBuildFile; fileRef = B0D2DE691CC45B5500577F82 /* ReactiveMoyaGloss.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0D2DE6F1CC45B6C00577F82 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01E39751CC451B8009D9FC9 /* Alamofire.framework */; };
 		B0D2DE701CC45B6C00577F82 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01E39761CC451B8009D9FC9 /* Gloss.framework */; };
@@ -340,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46FAB5271CEFEFC00011CDF2 /* Observable+Gloss.swift in Sources */,
+				B0889DD91CF950E000EB48EA /* Response+Gloss.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46FAB5281CEFEFC30011CDF2 /* SignalProducer+Gloss.swift in Sources */,
+				B0889DDA1CF950E100EB48EA /* Response+Gloss.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
