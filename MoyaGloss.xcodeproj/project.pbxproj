@@ -29,6 +29,7 @@
 		B0D2DE741CC45C4600577F82 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01E397D1CC451B8009D9FC9 /* RxSwift.framework */; };
 		B0D2DE751CC45C5400577F82 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01E39781CC451B8009D9FC9 /* ReactiveCocoa.framework */; };
 		B0D2DE761CC45C5400577F82 /* ReactiveMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01E39791CC451B8009D9FC9 /* ReactiveMoya.framework */; };
+		B0D68E781D10EFF70045857D /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01E397B1CC451B8009D9FC9 /* RxCocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 				B01E39961CC45AFF009D9FC9 /* Gloss.framework in Frameworks */,
 				B01E39951CC45AFF009D9FC9 /* Alamofire.framework in Frameworks */,
 				B01E39981CC45AFF009D9FC9 /* Result.framework in Frameworks */,
+				B0D68E781D10EFF70045857D /* RxCocoa.framework in Frameworks */,
 				B0D2DE741CC45C4600577F82 /* RxSwift.framework in Frameworks */,
 				B0D2DE731CC45C4600577F82 /* RxMoya.framework in Frameworks */,
 			);
