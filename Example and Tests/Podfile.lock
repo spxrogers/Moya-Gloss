@@ -1,8 +1,8 @@
 PODS:
-  - Alamofire (3.3.1)
-  - Gloss (0.7.1)
-  - Moya (6.4.0):
-    - Moya/Core (= 6.4.0)
+  - Alamofire (3.4.1)
+  - Gloss (0.7.3)
+  - Moya (6.5.0):
+    - Moya/Core (= 6.5.0)
   - Moya-Gloss (1.1.1):
     - Moya-Gloss/Core (= 1.1.1)
   - Moya-Gloss/Core (1.1.1):
@@ -16,13 +16,13 @@ PODS:
     - Moya-Gloss/Core
     - Moya/RxSwift (~> 6.0)
     - RxSwift (~> 2.0)
-  - Moya/Core (6.4.0):
+  - Moya/Core (6.5.0):
     - Alamofire (~> 3.0)
     - Result (~> 2.0)
-  - Moya/ReactiveCocoa (6.4.0):
+  - Moya/ReactiveCocoa (6.5.0):
     - Moya/Core
     - ReactiveCocoa (~> 4.1)
-  - Moya/RxSwift (6.4.0):
+  - Moya/RxSwift (6.5.0):
     - Moya/Core
     - RxSwift (~> 2.0)
   - Nimble (3.2.0)
@@ -39,7 +39,7 @@ PODS:
     - ReactiveCocoa/Core
     - Result (~> 2.0)
   - Result (2.0.0)
-  - RxSwift (2.4)
+  - RxSwift (2.5.0)
 
 DEPENDENCIES:
   - Moya-Gloss (from `../`)
@@ -53,14 +53,14 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
-  Gloss: e674d7aa06a7e292a591d0d39a759b826daf503e
-  Moya: 4d526954c8afd79820991393d40d7d8af756ceee
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  Gloss: c97a95d6279821f35fa0138700bce0391bce87c1
+  Moya: f7a4044719381cc6299f9ad3e0ef05f426f0557b
   Moya-Gloss: 8741b151687ba6b1fb71bb0694bf4cd4a2b70569
   Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
   Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
   ReactiveCocoa: d70004d7a366a7b8e87e60ce2347182c77701949
   Result: 9e75e1111c774c6ac594e14907b15057053a7959
-  RxSwift: 67b9ef4e8b34fb394e200e754c6a09cc16559f94
+  RxSwift: 402b41a50e922a0368fc14cb3bc9f4427920e8ae
 
 COCOAPODS: 0.39.0
