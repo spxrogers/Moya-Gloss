@@ -37,8 +37,8 @@
 		B01E393E1CC44A42009D9FC9 /* MoyaGloss.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoyaGloss.h; sourceTree = "<group>"; };
 		B01E39401CC44A42009D9FC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B01E39481CC44A9A009D9FC9 /* SignalProducer+Gloss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SignalProducer+Gloss.swift"; sourceTree = "<group>"; };
-		B01E39491CC44A9A009D9FC9 /* Response+Gloss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+Gloss.swift"; sourceTree = "<group>"; };
-		B01E394B1CC44A9A009D9FC9 /* Observable+Gloss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Gloss.swift"; sourceTree = "<group>"; };
+		B01E39491CC44A9A009D9FC9 /* Response+Gloss.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "Response+Gloss.swift"; sourceTree = "<group>"; tabWidth = 2; };
+		B01E394B1CC44A9A009D9FC9 /* Observable+Gloss.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "Observable+Gloss.swift"; sourceTree = "<group>"; tabWidth = 2; };
 		B01E39751CC451B8009D9FC9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		B01E39761CC451B8009D9FC9 /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
 		B01E39771CC451B8009D9FC9 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
@@ -102,7 +102,9 @@
 				B01E393C1CC44A42009D9FC9 /* Products */,
 				B01E39871CC45223009D9FC9 /* Dependencies */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		B01E393C1CC44A42009D9FC9 /* Products */ = {
 			isa = PBXGroup;

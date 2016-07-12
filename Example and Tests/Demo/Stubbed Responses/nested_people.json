@@ -1,0 +1,24 @@
+{
+  "people": [
+    {
+      "name": "steven rogers",
+      "age": 21
+    },
+    {
+      "name": "john doe"
+    }
+  ],
+  "multi": {
+    "nested": {
+      "people": [
+        {
+          "name": "steven rogers",
+          "age": 21
+        },
+        {
+          "name": "john doe"
+        }
+      ]
+    }
+  }
+}

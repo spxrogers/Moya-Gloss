@@ -1,9 +1,17 @@
 # Change Log
 `Moya-Gloss` adheres to [Semantic Versioning](http://semver.org/).
 
+- [1.2.0](#120)
 - [1.1.1](#111)
 - [1.1.0](#110)
 - [1.0.0](#100)
+
+---
+
+## [1.2.0](https://github.com/spxrogers/Moya-Gloss/releases/tag/1.2.0)
+
+#### Added
+- Extended API to support `mapObject(forKeyPath:)` and `mapArray(forKeyPath:)`
 
 ---
 

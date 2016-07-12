@@ -26,20 +26,23 @@ pod 'Moya-Gloss/ReactiveCocoa'
 
 ## Carthage
 
-Carthage lists `Moya` and `Gloss` as explicit dependencies, so it's only
-necessary to list the following in your Cartfile and it will pull down all
-three libraries. Carthage will generate three frameworks, `MoyaGloss`,
-`RxMoyaGloss`, and `ReactiveMoyaGloss` (following the naming convention of the
-three generated frameworks from Moya). It is only necessary to import one of
-these variations each.
-
 ```ruby
 github "spxrogers/Moya-Gloss"
 ```
 
+Carthage lists `Moya` and `Gloss` as explicit dependencies, so it's only
+necessary to list the above in your Cartfile and it will pull down all
+three libraries. Carthage will generate three frameworks, `MoyaGloss`,
+`RxMoyaGloss`, and `ReactiveMoyaGloss` (following the naming convention of the
+three generated frameworks from Moya). 
+
+**Note: is only necessary to import one of these variations, otherwise Xcode
+will give you an "Ambiguous use..." error.**
+
 # Usage
 
 ### Define your Model
+
 Create a `Class` or `Struct` which implements the `Decodable` (or `Glossy`) protocol.
 
 ```swift
@@ -61,6 +64,15 @@ struct Person: Decodable {
 }
 ```
 
+### API
+
+```swift
+mapObject()
+mapObject(forKeyPath:)
+mapArray()
+mapArray(forKeyPath:)
+```
+
 ## 1. Example
 
 
@@ -70,6 +82,8 @@ provider.request(ExampleAPI.GetObject) { (result) in
   case .Success(let response):
     do {
       let person = try response.mapObject(Person)
+      // *OR* the line below for a keyPath
+      // let person = try response.mapObject(Person.self, forKeyPath: "person")
       print("Found person: \(person)")
     } catch {
       print(error)
@@ -85,6 +99,8 @@ provider.request(ExampleAPI.GetObject) { (result) in
 ```swift
 provider.request(ExampleAPI.GetObject)
   .mapObject(Person)
+  // *OR* the line below for a keyPath
+  // .mapObject(Person.self, forKeyPath: "multi.nested.person")
   .subscribe { (event) in
     switch event {
     case .Next(let person):
@@ -103,6 +119,8 @@ provider.request(ExampleAPI.GetObject)
 ```swift
 provider.request(ExampleAPI.GetObject)
   .mapObject(Person)
+  // *OR* the line below for a keyPath
+  // .mapObject(Person.self, forKeyPath: "person")
   .start { (event) in
     switch event {
     case .Next(let person):

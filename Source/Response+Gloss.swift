@@ -5,12 +5,11 @@
 //  Copyright (c) 2016 Steven Rogers
 //
 
-import Foundation
 import Moya
 import Gloss
 
 public extension Response {
-
+  
   /// Maps response data into a model object implementing the Decodable protocol.
   /// Throws a JSONMapping error on failure.
   public func mapObject<T: Decodable>(type: T.Type) throws -> T {
@@ -22,7 +21,20 @@ public extension Response {
     }
     return result
   }
-
+  
+  /// Maps nested response data into a model object implementing the Decodable protocol.
+  /// Throws a JSONMapping error on failure.
+  public func mapObject<T: Decodable>(type: T.Type, forKeyPath keyPath: String) throws -> T {
+    guard
+      let json = try mapJSON() as? JSON,
+      let nested = json.valueForKeyPath(keyPath) as? JSON,
+      let result = T(json: nested)
+    else {
+      throw Error.JSONMapping(self)
+    }
+    return result
+  }
+  
   /// Maps the response data into an array of model objects implementing the Decodable protocol.
   /// Throws a JSONMapping error on failure.
   public func mapArray<T: Decodable>(type: T.Type) throws -> [T] {
@@ -33,5 +45,16 @@ public extension Response {
     }
     return [T].fromJSONArray(json)
   }
-
+  
+  /// Maps the nested response data into an array of model objects implementing the Decodable protocol.
+  /// Throws a JSONMapping error on failure.
+  public func mapArray<T: Decodable>(type: T.Type, forKeyPath keyPath: String) throws -> [T] {
+    guard
+      let json = try mapJSON() as? JSON,
+      let nested = json.valueForKeyPath(keyPath) as? [JSON]
+    else {
+      throw Error.JSONMapping(self)
+    }
+    return [T].fromJSONArray(nested)
+  }
 }

@@ -16,6 +16,8 @@ let racStubbedProvider = ReactiveCocoaMoyaProvider<ExampleAPI>(stubClosure: Moya
 enum ExampleAPI {
   case GetObject
   case GetArray
+  case GetNestedObject
+  case GetNestedArray
   case GetBadObject
   case GetBadFormat
 }
@@ -29,6 +31,10 @@ extension ExampleAPI: TargetType {
       return "/person"
     case .GetArray:
       return "/people"
+    case .GetNestedObject:
+      return "/nested_person"
+    case .GetNestedArray:
+      return "/nested_people"
     case .GetBadObject:
       return "/badobject"
     case .GetBadFormat:
@@ -50,6 +56,10 @@ extension ExampleAPI: TargetType {
       return stubbedResponse("person")
     case .GetArray:
       return stubbedResponse("people")
+    case .GetNestedObject:
+      return stubbedResponse("nested_person")
+    case .GetNestedArray:
+      return stubbedResponse("nested_people")
     case .GetBadObject:
       return stubbedResponse("bad_person")
     case .GetBadFormat:
