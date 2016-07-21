@@ -1,10 +1,18 @@
 # Change Log
 `Moya-Gloss` adheres to [Semantic Versioning](http://semver.org/).
 
+- [1.3.0](#130)
 - [1.2.0](#120)
 - [1.1.1](#111)
 - [1.1.0](#110)
 - [1.0.0](#100)
+
+---
+
+## [1.3.0](https://github.com/spxrogers/Moya-Gloss/releases/tag/1.3.0)
+
+#### Updated
+- Upgraded Moya dependency to latest Moya version [(7.0.0)](https://github.com/Moya/Moya/releases/tag/7.0.0).
 
 ---
 

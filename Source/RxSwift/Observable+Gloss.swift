@@ -10,7 +10,7 @@ import RxSwift
 import Moya
 import Gloss
 
-/// Extension for transforming Responses into Decodable object via Gloss
+/// Extension for transforming Moya Responses into Decodable object(s) via Gloss with Rx goodness
 public extension ObservableType where E == Response {
   
   /// Maps response data into an Observable of a type that implements the Decodable protocol.

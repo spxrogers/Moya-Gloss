@@ -8,6 +8,7 @@
 import Moya
 import Gloss
 
+/// Moya-Gloss extension for Moya.Response to allow Gloss bindings.
 public extension Response {
   
   /// Maps response data into a model object implementing the Decodable protocol.
