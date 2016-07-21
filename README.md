@@ -9,7 +9,7 @@ Supports [RxSwift](https://github.com/ReactiveX/RxSwift/) and [ReactiveCocoa](ht
 
 # Installation
 
-## CocoaPods
+### CocoaPods
 
 Add to your Podfile:
 
@@ -24,7 +24,7 @@ pod 'Moya-Gloss/RxSwift'
 pod 'Moya-Gloss/ReactiveCocoa'
 ```
 
-## Carthage
+### Carthage
 
 ```ruby
 github "spxrogers/Moya-Gloss"
