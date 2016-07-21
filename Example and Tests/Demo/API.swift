@@ -66,6 +66,10 @@ extension ExampleAPI: TargetType {
       return stubbedResponse("bad_format")
     }
   }
+
+  var multipartBody: [MultipartFormData]? {
+    return nil
+  }
 }
 
 func stubbedResponse(filename: String) -> NSData! {
