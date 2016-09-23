@@ -14,30 +14,30 @@ let rxStubbedProvider = RxMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.Imm
 let racStubbedProvider = ReactiveCocoaMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.ImmediatelyStub)
 
 enum ExampleAPI {
-  case GetObject
-  case GetArray
-  case GetNestedObject
-  case GetNestedArray
-  case GetBadObject
-  case GetBadFormat
+  case getObject
+  case getArray
+  case getNestedObject
+  case getNestedArray
+  case getBadObject
+  case getBadFormat
 }
 
 extension ExampleAPI: TargetType {
-  var baseURL: NSURL { return NSURL(string: "http://srogers.net/rest")! }
+  var baseURL: URL { return URL(string: "http://srogers.net/rest")! }
 
   var path: String {
     switch self {
-    case .GetObject:
+    case .getObject:
       return "/person"
-    case .GetArray:
+    case .getArray:
       return "/people"
-    case .GetNestedObject:
+    case .getNestedObject:
       return "/nested_person"
-    case .GetNestedArray:
+    case .getNestedArray:
       return "/nested_people"
-    case .GetBadObject:
+    case .getBadObject:
       return "/badobject"
-    case .GetBadFormat:
+    case .getBadFormat:
       return "/badformat"
     }
   }
@@ -46,23 +46,23 @@ extension ExampleAPI: TargetType {
     return .GET
   }
 
-  var parameters: [String: AnyObject]? {
+  var parameters: [String: Any]? {
     return nil
   }
 
-  var sampleData: NSData {
+  var sampleData: Data {
     switch self {
-    case .GetObject:
+    case .getObject:
       return stubbedResponse("person")
-    case .GetArray:
+    case .getArray:
       return stubbedResponse("people")
-    case .GetNestedObject:
+    case .getNestedObject:
       return stubbedResponse("nested_person")
-    case .GetNestedArray:
+    case .getNestedArray:
       return stubbedResponse("nested_people")
-    case .GetBadObject:
+    case .getBadObject:
       return stubbedResponse("bad_person")
-    case .GetBadFormat:
+    case .getBadFormat:
       return stubbedResponse("bad_format")
     }
   }
@@ -70,10 +70,14 @@ extension ExampleAPI: TargetType {
   var multipartBody: [MultipartFormData]? {
     return nil
   }
+  
+  var task: Task {
+    return .request
+  }
 }
 
-func stubbedResponse(filename: String) -> NSData! {
-  let bundle = NSBundle.mainBundle()
-  let path = bundle.pathForResource(filename, ofType: "json")
-  return NSData(contentsOfFile: path!)
+func stubbedResponse(_ filename: String) -> Data! {
+  let bundle = Bundle.main
+  let path = bundle.path(forResource: filename, ofType: "json")
+  return (try? Data(contentsOf: URL(fileURLWithPath: path!)))
 }

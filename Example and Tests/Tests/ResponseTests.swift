@@ -7,12 +7,12 @@ import Moya_Gloss
 
 class ResponseGlossSpec: QuickSpec {
   override func spec() {
-    let getObject = ExampleAPI.GetObject
-    let getArray = ExampleAPI.GetArray
-    let getNestedObject = ExampleAPI.GetNestedObject
-    let getNestedArray = ExampleAPI.GetNestedArray
-    let getBadObject = ExampleAPI.GetBadObject
-    let getBadFormat = ExampleAPI.GetBadFormat
+    let getObject = ExampleAPI.getObject
+    let getArray = ExampleAPI.getArray
+    let getNestedObject = ExampleAPI.getNestedObject
+    let getNestedArray = ExampleAPI.getNestedArray
+    let getBadObject = ExampleAPI.getBadObject
+    let getBadFormat = ExampleAPI.getBadFormat
 
     var provider: MoyaProvider<ExampleAPI>!
     beforeEach {
@@ -27,14 +27,14 @@ class ResponseGlossSpec: QuickSpec {
       waitUntil(timeout: 5) { done in
         provider.request(getObject) { (result) in
           switch result {
-          case .Success(let response):
+          case .success(let response):
             do {
-              let person = try response.mapObject(Person)
+              let person = try response.mapObject(Person.self)
               equal = steven == person
             } catch {
               equal = false
             }
-          case .Failure(_):
+          case .failure(_):
             equal = false
           }
           done()
@@ -52,14 +52,14 @@ class ResponseGlossSpec: QuickSpec {
       waitUntil(timeout: 5) { done in
         provider.request(getArray) { (result) in
           switch result {
-          case .Success(let response):
+          case .success(let response):
             do {
-              let resultPeople = try response.mapArray(Person)
+              let resultPeople = try response.mapArray(Person.self)
               equal = people == resultPeople
             } catch {
               equal = false
             }
-          case .Failure(_):
+          case .failure(_):
             equal = false
           }
           done()
@@ -76,14 +76,14 @@ class ResponseGlossSpec: QuickSpec {
       waitUntil(timeout: 5) { done in
         provider.request(getNestedObject) { (result) in
           switch result {
-          case .Success(let response):
+          case .success(let response):
             do {
               let person = try response.mapObject(Person.self, forKeyPath: "person")
               equal = steven == person
             } catch {
               equal = false
             }
-          case .Failure(_):
+          case .failure(_):
             equal = false
           }
           done()
@@ -99,14 +99,14 @@ class ResponseGlossSpec: QuickSpec {
       waitUntil(timeout: 5) { done in
         provider.request(getNestedObject) { (result) in
           switch result {
-          case .Success(let response):
+          case .success(let response):
             do {
               let person = try response.mapObject(Person.self, forKeyPath: "multi.nested.person")
               equal = steven == person
             } catch {
               equal = false
             }
-          case .Failure(_):
+          case .failure(_):
             equal = false
           }
           done()
@@ -125,14 +125,14 @@ class ResponseGlossSpec: QuickSpec {
       waitUntil(timeout: 5) { done in
         provider.request(getNestedArray) { (result) in
           switch result {
-          case .Success(let response):
+          case .success(let response):
             do {
               let resultPeople = try response.mapArray(Person.self, forKeyPath: "people")
               equal = people == resultPeople
             } catch {
               equal = false
             }
-          case .Failure(_):
+          case .failure(_):
             equal = false
           }
           done()
@@ -150,14 +150,14 @@ class ResponseGlossSpec: QuickSpec {
       waitUntil(timeout: 5) { done in
         provider.request(getNestedArray) { (result) in
           switch result {
-          case .Success(let response):
+          case .success(let response):
             do {
               let resultPeople = try response.mapArray(Person.self, forKeyPath: "multi.nested.people")
               equal = people == resultPeople
             } catch {
               equal = false
             }
-          case .Failure(_):
+          case .failure(_):
             equal = false
           }
           done()
@@ -173,14 +173,14 @@ class ResponseGlossSpec: QuickSpec {
       waitUntil(timeout: 5) { done in
         provider.request(getBadObject) { (result) in
           switch result {
-          case .Success(let response):
+          case .success(let response):
             do {
-              _ = try response.mapArray(Person)
+              _ = try response.mapArray(Person.self)
               failedWhenExpected = false
             } catch {
               failedWhenExpected = true
             }
-          case .Failure(_):
+          case .failure(_):
             failedWhenExpected = false
           }
         }
@@ -195,14 +195,14 @@ class ResponseGlossSpec: QuickSpec {
       waitUntil(timeout: 5) { done in
         provider.request(getBadFormat) { (result) in
           switch result {
-          case .Success(let response):
+          case .success(let response):
             do {
-              _ = try response.mapObject(Person)
+              _ = try response.mapObject(Person.self)
               failedWhenExpected = false
             } catch {
               failedWhenExpected = true
             }
-          case .Failure(_):
+          case .failure(_):
             failedWhenExpected = false
           }
         }
@@ -217,14 +217,14 @@ class ResponseGlossSpec: QuickSpec {
       waitUntil(timeout: 5) { done in
         provider.request(getBadFormat) { (result) in
           switch result {
-          case .Success(let response):
+          case .success(let response):
             do {
-              _ = try response.mapArray(Person)
+              _ = try response.mapArray(Person.self)
               failedWhenExpected = false
             } catch {
               failedWhenExpected = true
             }
-          case .Failure(_):
+          case .failure(_):
             failedWhenExpected = false
           }
         }
@@ -239,14 +239,14 @@ class ResponseGlossSpec: QuickSpec {
       waitUntil(timeout: 5) { done in
         provider.request(getNestedObject) { (result) in
           switch result {
-          case .Success(let response):
+          case .success(let response):
             do {
               _ = try response.mapObject(Person.self, forKeyPath: "doesnotexist")
               failedWhenExpected = false
             } catch {
               failedWhenExpected = true
             }
-          case .Failure(_):
+          case .failure(_):
             failedWhenExpected = false
           }
           done()
@@ -261,14 +261,14 @@ class ResponseGlossSpec: QuickSpec {
       waitUntil(timeout: 5) { done in
         provider.request(getNestedObject) { (result) in
           switch result {
-          case .Success(let response):
+          case .success(let response):
             do {
               _ = try response.mapObject(Person.self, forKeyPath: "multi.whoops")
               failedWhenExpected = false
             } catch {
               failedWhenExpected = true
             }
-          case .Failure(_):
+          case .failure(_):
             failedWhenExpected = false
           }
           done()
@@ -283,14 +283,14 @@ class ResponseGlossSpec: QuickSpec {
       waitUntil(timeout: 5) { done in
         provider.request(getNestedArray) { (result) in
           switch result {
-          case .Success(let response):
+          case .success(let response):
             do {
               _ = try response.mapArray(Person.self, forKeyPath: "doesnotexist")
               failedWhenExpected = false
             } catch {
               failedWhenExpected = true
             }
-          case .Failure(_):
+          case .failure(_):
             failedWhenExpected = false
           }
           done()
@@ -305,14 +305,14 @@ class ResponseGlossSpec: QuickSpec {
       waitUntil(timeout: 5) { done in
         provider.request(getNestedArray) { (result) in
           switch result {
-          case .Success(let response):
+          case .success(let response):
             do {
               _ = try response.mapArray(Person.self, forKeyPath: "multi.whoops")
               failedWhenExpected = false
             } catch {
               failedWhenExpected = true
             }
-          case .Failure(_):
+          case .failure(_):
             failedWhenExpected = false
           }
           done()

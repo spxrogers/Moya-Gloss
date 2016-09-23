@@ -7,21 +7,27 @@ def core()
   pod 'Moya-Gloss', :path => '../'
   pod 'Moya-Gloss/RxSwift', :path => '../'
   pod 'Moya-Gloss/ReactiveCocoa', :path => '../'
+  pod 'Gloss', '~> 1.0'
+  pod 'Alamofire', '~> 4.0.0'
+  pod 'Moya', git: 'https://github.com/Moya/Moya.git', tag: '8.0.0-beta.2'
+  pod 'RxSwift', '3.0.0-beta.1'
+  pod 'RxCocoa', '3.0.0-beta.1'
+  pod 'ReactiveSwift', :podspec => 'https://raw.githubusercontent.com/ashfurrow/ReactiveSwift/ea5a7f9c7e31adf262be14173a80709c15d25300/ReactiveSwift.podspec'
 end
 
 # Testing Libraries
 def testing()
-  pod 'Quick', '~> 0.9.0'
-  pod 'Nimble', '~> 3.2.0'
+  pod 'Quick', :git => "https://github.com/Quick/Quick", :branch => "swift-3.0"
+  pod 'Nimble', :git => "https://github.com/Quick/Nimble", :branch => "master"
 end
 
 target 'Demo' do
-  platform :ios, '8.0'
+  platform :ios, '9.0'
   core
 end
 
 target 'Tests' do
-  platform :ios, '8.0'
+  platform :ios, '9.0'
   core
   testing
 end

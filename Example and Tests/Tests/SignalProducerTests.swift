@@ -8,12 +8,12 @@ import Moya_Gloss
 
 class SignalProducerGlossSpec: QuickSpec {
   override func spec() {
-    let getObject = ExampleAPI.GetObject
-    let getArray = ExampleAPI.GetArray
-    let getNestedObject = ExampleAPI.GetNestedObject
-    let getNestedArray = ExampleAPI.GetNestedArray
-    let getBadObject = ExampleAPI.GetBadObject
-    let getBadFormat = ExampleAPI.GetBadFormat
+    let getObject = ExampleAPI.getObject
+    let getArray = ExampleAPI.getArray
+    let getNestedObject = ExampleAPI.getNestedObject
+    let getNestedArray = ExampleAPI.getNestedArray
+    let getBadObject = ExampleAPI.getBadObject
+    let getBadFormat = ExampleAPI.getBadFormat
 
     var provider: ReactiveCocoaMoyaProvider<ExampleAPI>!
     beforeEach { 
@@ -26,15 +26,15 @@ class SignalProducerGlossSpec: QuickSpec {
       var equal = false
 
       waitUntil(timeout: 5) { done in
-        provider.request(getObject)
-          .mapObject(Person)
+        provider.request(token: getObject)
+          .mapObject(type: Person.self)
           .start { (event) in
             switch event {
-            case .Next(let person):
+            case .next(let person):
               equal = steven == person
-            case .Failed(_):
+            case .failed(_):
               equal = false
-            case .Completed:
+            case .completed:
               done()
             default:
               break
@@ -51,15 +51,15 @@ class SignalProducerGlossSpec: QuickSpec {
       var equal = false
 
       waitUntil(timeout: 5) { done in
-        provider.request(getArray)
-          .mapArray(Person)
+        provider.request(token: getArray)
+          .mapArray(type: Person.self)
           .start { (event) in
             switch event {
-            case .Next(let resultPeople):
+            case .next(let resultPeople):
               equal = people == resultPeople
-            case .Failed(_):
+            case .failed(_):
               equal = false
-            case .Completed:
+            case .completed:
               done()
             default:
               break
@@ -75,15 +75,15 @@ class SignalProducerGlossSpec: QuickSpec {
       var equal = false
       
       waitUntil(timeout: 5) { done in
-        provider.request(getNestedObject)
-          .mapObject(Person.self, forKeyPath: "person")
+        provider.request(token: getNestedObject)
+          .mapObject(type: Person.self, forKeyPath: "person")
           .start { (event) in
             switch event {
-            case .Next(let person):
+            case .next(let person):
               equal = steven == person
-            case .Failed(_):
+            case .failed(_):
               equal = false
-            case .Completed:
+            case .completed:
               done()
             default:
               break
@@ -98,15 +98,15 @@ class SignalProducerGlossSpec: QuickSpec {
       var equal = false
       
       waitUntil(timeout: 5) { done in
-        provider.request(getNestedObject)
-          .mapObject(Person.self, forKeyPath: "multi.nested.person")
+        provider.request(token: getNestedObject)
+          .mapObject(type: Person.self, forKeyPath: "multi.nested.person")
           .start { (event) in
             switch event {
-            case .Next(let person):
+            case .next(let person):
               equal = steven == person
-            case .Failed(_):
+            case .failed(_):
               equal = false
-            case .Completed:
+            case .completed:
               done()
             default:
               break
@@ -124,15 +124,15 @@ class SignalProducerGlossSpec: QuickSpec {
       var equal = false
       
       waitUntil(timeout: 5) { done in
-        provider.request(getNestedArray)
-          .mapArray(Person.self, forKeyPath: "people")
+        provider.request(token: getNestedArray)
+          .mapArray(type: Person.self, forKeyPath: "people")
           .start { (event) in
             switch event {
-            case .Next(let resultPeople):
+            case .next(let resultPeople):
               equal = people == resultPeople
-            case .Failed(_):
+            case .failed(_):
               equal = false
-            case .Completed:
+            case .completed:
               done()
             default:
               break
@@ -149,15 +149,15 @@ class SignalProducerGlossSpec: QuickSpec {
       var equal = false
       
       waitUntil(timeout: 5) { done in
-        provider.request(getNestedArray)
-          .mapArray(Person.self, forKeyPath: "multi.nested.people")
+        provider.request(token: getNestedArray)
+          .mapArray(type: Person.self, forKeyPath: "multi.nested.people")
           .start { (event) in
             switch event {
-            case .Next(let resultPeople):
+            case .next(let resultPeople):
               equal = people == resultPeople
-            case .Failed(_):
+            case .failed(_):
               equal = false
-            case .Completed:
+            case .completed:
               done()
             default:
               break
@@ -172,13 +172,13 @@ class SignalProducerGlossSpec: QuickSpec {
       var failedWhenExpected = false
 
       waitUntil(timeout: 5) { done in
-        provider.request(getBadObject)
-          .mapObject(Person)
+        provider.request(token: getBadObject)
+          .mapObject(type: Person.self)
           .start { (event) in
             switch event {
-            case .Next(_):
+            case .next(_):
               failedWhenExpected = false
-            case .Failed(_):
+            case .failed(_):
               failedWhenExpected = true
               done()
             default:
@@ -193,13 +193,13 @@ class SignalProducerGlossSpec: QuickSpec {
       var failedWhenExpected = false
 
       waitUntil(timeout: 5) { done in
-        provider.request(getBadFormat)
-          .mapObject(Person)
+        provider.request(token: getBadFormat)
+          .mapObject(type: Person.self)
           .start { (event) in
             switch event {
-            case .Next(_):
+            case .next(_):
               failedWhenExpected = false
-            case .Failed(_):
+            case .failed(_):
               failedWhenExpected = true
               done()
             default:
@@ -215,13 +215,13 @@ class SignalProducerGlossSpec: QuickSpec {
       var failedWhenExpected = false
 
       waitUntil(timeout: 5) { done in
-        provider.request(getBadFormat)
-          .mapArray(Person)
+        provider.request(token: getBadFormat)
+          .mapArray(type: Person.self)
           .start { (event) in
             switch event {
-            case .Next(_):
+            case .next(_):
               failedWhenExpected = false
-            case .Failed(_):
+            case .failed(_):
               failedWhenExpected = true
               done()
             default:
@@ -236,16 +236,16 @@ class SignalProducerGlossSpec: QuickSpec {
       var failedWhenExpected = false
       
       waitUntil(timeout: 5) { done in
-        provider.request(getNestedObject)
-          .mapObject(Person.self, forKeyPath: "doesnotexist")
+        provider.request(token: getNestedObject)
+          .mapObject(type: Person.self, forKeyPath: "doesnotexist")
           .start { (event) in
             switch event {
-            case .Next(_):
+            case .next(_):
               failedWhenExpected = false
-            case .Failed(_):
+            case .failed(_):
               failedWhenExpected = true
               done()
-            case .Completed:
+            case .completed:
               done()
             default:
               break
@@ -259,16 +259,16 @@ class SignalProducerGlossSpec: QuickSpec {
       var failedWhenExpected = false
       
       waitUntil(timeout: 5) { done in
-        provider.request(getNestedObject)
-          .mapObject(Person.self, forKeyPath: "multi.whoops")
+        provider.request(token: getNestedObject)
+          .mapObject(type: Person.self, forKeyPath: "multi.whoops")
           .start { (event) in
             switch event {
-            case .Next(_):
+            case .next(_):
               failedWhenExpected = false
-            case .Failed(_):
+            case .failed(_):
               failedWhenExpected = true
               done()
-            case .Completed:
+            case .completed:
               done()
             default:
               break
@@ -282,16 +282,16 @@ class SignalProducerGlossSpec: QuickSpec {
       var failedWhenExpected = false
       
       waitUntil(timeout: 5) { done in
-        provider.request(getNestedArray)
-          .mapArray(Person.self, forKeyPath: "doesnotexist")
+        provider.request(token: getNestedArray)
+          .mapArray(type: Person.self, forKeyPath: "doesnotexist")
           .start { (event) in
             switch event {
-            case .Next(_):
+            case .next(_):
               failedWhenExpected = false
-            case .Failed(_):
+            case .failed(_):
               failedWhenExpected = true
               done()
-            case .Completed:
+            case .completed:
               done()
             default:
               break
@@ -305,16 +305,16 @@ class SignalProducerGlossSpec: QuickSpec {
       var failedWhenExpected = false
       
       waitUntil(timeout: 5) { done in
-        provider.request(getNestedArray)
-          .mapArray(Person.self, forKeyPath: "multi.whoops")
+        provider.request(token: getNestedArray)
+          .mapArray(type: Person.self, forKeyPath: "multi.whoops")
           .start { (event) in
             switch event {
-            case .Next(_):
+            case .next(_):
               failedWhenExpected = false
-            case .Failed(_):
+            case .failed(_):
               failedWhenExpected = true
               done()
-            case .Completed:
+            case .completed:
               done()
             default:
               break

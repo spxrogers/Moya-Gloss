@@ -8,12 +8,12 @@ import Moya_Gloss
 
 class ObservableGlossSpec: QuickSpec {
   override func spec() {
-    let getObject = ExampleAPI.GetObject
-    let getArray = ExampleAPI.GetArray
-    let getNestedObject = ExampleAPI.GetNestedObject
-    let getNestedArray = ExampleAPI.GetNestedArray
-    let getBadObject = ExampleAPI.GetBadObject
-    let getBadFormat = ExampleAPI.GetBadFormat
+    let getObject = ExampleAPI.getObject
+    let getArray = ExampleAPI.getArray
+    let getNestedObject = ExampleAPI.getNestedObject
+    let getNestedArray = ExampleAPI.getNestedArray
+    let getBadObject = ExampleAPI.getBadObject
+    let getBadFormat = ExampleAPI.getBadFormat
     let disposeBag = DisposeBag()
 
     var provider: RxMoyaProvider<ExampleAPI>!
@@ -28,14 +28,14 @@ class ObservableGlossSpec: QuickSpec {
 
       waitUntil(timeout: 5) { done in
         provider.request(getObject)
-          .mapObject(Person)
+          .mapObject(type: Person.self)
           .subscribe { (event) in
             switch event {
-            case .Next(let person):
+            case .next(let person):
               equal = steven == person
-            case .Error(_):
+            case .error(_):
               equal = false
-            case .Completed:
+            case .completed:
               done()
             }
           }
@@ -52,14 +52,14 @@ class ObservableGlossSpec: QuickSpec {
 
       waitUntil(timeout: 5) { done in
         provider.request(getArray)
-          .mapArray(Person)
+          .mapArray(type: Person.self)
           .subscribe{ (event) in
             switch event {
-            case .Next(let resultPeople):
+            case .next(let resultPeople):
               equal = people == resultPeople
-            case .Error(_):
+            case .error(_):
               equal = false
-            case .Completed:
+            case .completed:
               done()
             }
           }
@@ -75,14 +75,14 @@ class ObservableGlossSpec: QuickSpec {
       
       waitUntil(timeout: 5) { done in
         provider.request(getNestedObject)
-          .mapObject(Person.self, forKeyPath: "person")
+          .mapObject(type: Person.self, forKeyPath: "person")
           .subscribe { (event) in
             switch event {
-            case .Next(let person):
+            case .next(let person):
               equal = steven == person
-            case .Error(_):
+            case .error(_):
               equal = false
-            case .Completed:
+            case .completed:
               done()
             }
           }
@@ -97,14 +97,14 @@ class ObservableGlossSpec: QuickSpec {
       
       waitUntil(timeout: 5) { done in
         provider.request(getNestedObject)
-          .mapObject(Person.self, forKeyPath: "multi.nested.person")
+          .mapObject(type: Person.self, forKeyPath: "multi.nested.person")
           .subscribe { (event) in
             switch event {
-            case .Next(let person):
+            case .next(let person):
               equal = steven == person
-            case .Error(_):
+            case .error(_):
               equal = false
-            case .Completed:
+            case .completed:
               done()
             }
           }
@@ -122,14 +122,14 @@ class ObservableGlossSpec: QuickSpec {
       
       waitUntil(timeout: 5) { done in
         provider.request(getNestedArray)
-          .mapArray(Person.self, forKeyPath: "people")
+          .mapArray(type: Person.self, forKeyPath: "people")
           .subscribe{ (event) in
             switch event {
-            case .Next(let resultPeople):
+            case .next(let resultPeople):
               equal = people == resultPeople
-            case .Error(_):
+            case .error(_):
               equal = false
-            case .Completed:
+            case .completed:
               done()
             }
           }
@@ -146,14 +146,14 @@ class ObservableGlossSpec: QuickSpec {
       
       waitUntil(timeout: 5) { done in
         provider.request(getNestedArray)
-          .mapArray(Person.self, forKeyPath: "multi.nested.people")
+          .mapArray(type: Person.self, forKeyPath: "multi.nested.people")
           .subscribe{ (event) in
             switch event {
-            case .Next(let resultPeople):
+            case .next(let resultPeople):
               equal = people == resultPeople
-            case .Error(_):
+            case .error(_):
               equal = false
-            case .Completed:
+            case .completed:
               done()
             }
           }
@@ -168,15 +168,15 @@ class ObservableGlossSpec: QuickSpec {
 
       waitUntil(timeout: 5) { done in
         provider.request(getBadObject)
-          .mapObject(Person)
+          .mapObject(type: Person.self)
           .subscribe{ (event) in
             switch event {
-            case .Next(_):
+            case .next(_):
               failedWhenExpected = false
-            case .Error(_):
+            case .error(_):
               failedWhenExpected = true
               done()
-            case .Completed:
+            case .completed:
               done()
             }
           }
@@ -190,15 +190,15 @@ class ObservableGlossSpec: QuickSpec {
 
       waitUntil(timeout: 5) { done in
         provider.request(getBadFormat)
-          .mapObject(Person)
+          .mapObject(type: Person.self)
           .subscribe{ (event) in
             switch event {
-            case .Next(_):
+            case .next(_):
               failedWhenExpected = false
-            case .Error(_):
+            case .error(_):
               failedWhenExpected = true
               done()
-            case .Completed:
+            case .completed:
               done()
             }
           }
@@ -212,15 +212,15 @@ class ObservableGlossSpec: QuickSpec {
 
       waitUntil(timeout: 5) { done in
         provider.request(getBadFormat)
-          .mapArray(Person)
+          .mapArray(type: Person.self)
           .subscribe{ (event) in
             switch event {
-            case .Next(_):
+            case .next(_):
               failedWhenExpected = false
-            case .Error(_):
+            case .error(_):
               failedWhenExpected = true
               done()
-            case .Completed:
+            case .completed:
               done()
             }
           }
@@ -234,15 +234,15 @@ class ObservableGlossSpec: QuickSpec {
       
       waitUntil(timeout: 5) { done in
         provider.request(getNestedObject)
-          .mapObject(Person.self, forKeyPath: "doesnotexist")
+          .mapObject(type: Person.self, forKeyPath: "doesnotexist")
           .subscribe { (event) in
             switch event {
-            case .Next(_):
+            case .next(_):
               failedWhenExpected = false
-            case .Error(_):
+            case .error(_):
               failedWhenExpected = true
               done()
-            case .Completed:
+            case .completed:
               done()
             }
           }
@@ -256,15 +256,15 @@ class ObservableGlossSpec: QuickSpec {
       
       waitUntil(timeout: 5) { done in
         provider.request(getNestedObject)
-          .mapObject(Person.self, forKeyPath: "multi.whoops")
+          .mapObject(type: Person.self, forKeyPath: "multi.whoops")
           .subscribe { (event) in
             switch event {
-            case .Next(_):
+            case .next(_):
               failedWhenExpected = false
-            case .Error(_):
+            case .error(_):
               failedWhenExpected = true
               done()
-            case .Completed:
+            case .completed:
               done()
             }
           }
@@ -278,15 +278,15 @@ class ObservableGlossSpec: QuickSpec {
       
       waitUntil(timeout: 5) { done in
         provider.request(getNestedArray)
-          .mapArray(Person.self, forKeyPath: "doesnotexist")
+          .mapArray(type: Person.self, forKeyPath: "doesnotexist")
           .subscribe { (event) in
             switch event {
-            case .Next(_):
+            case .next(_):
               failedWhenExpected = false
-            case .Error(_):
+            case .error(_):
               failedWhenExpected = true
               done()
-            case .Completed:
+            case .completed:
               done()
             }
           }
@@ -300,15 +300,15 @@ class ObservableGlossSpec: QuickSpec {
       
       waitUntil(timeout: 5) { done in
         provider.request(getNestedArray)
-          .mapObject(Person.self, forKeyPath: "multi.whoops")
+          .mapObject(type: Person.self, forKeyPath: "multi.whoops")
           .subscribe { (event) in
             switch event {
-            case .Next(_):
+            case .next(_):
               failedWhenExpected = false
-            case .Error(_):
+            case .error(_):
               failedWhenExpected = true
               done()
-            case .Completed:
+            case .completed:
               done()
             }
           }

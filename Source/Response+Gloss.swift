@@ -13,49 +13,59 @@ public extension Response {
   
   /// Maps response data into a model object implementing the Decodable protocol.
   /// Throws a JSONMapping error on failure.
-  public func mapObject<T: Decodable>(type: T.Type) throws -> T {
+  public func mapObject<T: Decodable>(_ type: T.Type) throws -> T {
     guard
       let json = try mapJSON() as? JSON,
       let result = T(json: json)
     else {
-      throw Error.JSONMapping(self)
+      throw Error.jsonMapping(self)
     }
     return result
   }
   
   /// Maps nested response data into a model object implementing the Decodable protocol.
   /// Throws a JSONMapping error on failure.
-  public func mapObject<T: Decodable>(type: T.Type, forKeyPath keyPath: String) throws -> T {
+  public func mapObject<T: Decodable>(_ type: T.Type, forKeyPath keyPath: String) throws -> T {
     guard
-      let json = try mapJSON() as? JSON,
-      let nested = json.valueForKeyPath(keyPath) as? JSON,
+      let json = try mapJSON() as? NSDictionary,
+      let nested = json.value(forKeyPath: keyPath) as? JSON,
       let result = T(json: nested)
     else {
-      throw Error.JSONMapping(self)
+      throw Error.jsonMapping(self)
     }
     return result
   }
   
   /// Maps the response data into an array of model objects implementing the Decodable protocol.
   /// Throws a JSONMapping error on failure.
-  public func mapArray<T: Decodable>(type: T.Type) throws -> [T] {
+  public func mapArray<T: Decodable>(_ type: T.Type) throws -> [T] {
     guard
       let json = try mapJSON() as? [JSON]
     else {
-      throw Error.JSONMapping(self)
+      throw Error.jsonMapping(self)
     }
-    return [T].fromJSONArray(json)
+
+    if let models = [T].from(jsonArray: json) {
+      return models
+    } else {
+      throw Error.jsonMapping(self)
+    }
   }
   
   /// Maps the nested response data into an array of model objects implementing the Decodable protocol.
   /// Throws a JSONMapping error on failure.
-  public func mapArray<T: Decodable>(type: T.Type, forKeyPath keyPath: String) throws -> [T] {
+  public func mapArray<T: Decodable>(_ type: T.Type, forKeyPath keyPath: String) throws -> [T] {
     guard
-      let json = try mapJSON() as? JSON,
-      let nested = json.valueForKeyPath(keyPath) as? [JSON]
+      let json = try mapJSON() as? NSDictionary,
+      let nested = json.value(forKeyPath: keyPath) as? [JSON]
     else {
-      throw Error.JSONMapping(self)
+      throw Error.jsonMapping(self)
     }
-    return [T].fromJSONArray(nested)
+
+    if let models = [T].from(jsonArray: nested) {
+      return models
+    } else {
+      throw Error.jsonMapping(self)
+    }
   }
 }
