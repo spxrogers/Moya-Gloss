@@ -79,7 +79,7 @@ mapArray(forKeyPath:)
 ```swift
 provider.request(ExampleAPI.GetObject) { (result) in
   switch result {
-  case .Success(let response):
+  case .success(let response):
     do {
       let person = try response.mapObject(Person)
       // *OR* the line below for a keyPath
@@ -88,7 +88,7 @@ provider.request(ExampleAPI.GetObject) { (result) in
     } catch {
       print(error)
     }
-  case .Failure(let error):
+  case .failure(let error):
     print(error)
   }
 }
@@ -103,9 +103,9 @@ provider.request(ExampleAPI.GetObject)
   // .mapObject(Person.self, forKeyPath: "multi.nested.person")
   .subscribe { (event) in
     switch event {
-    case .Next(let person):
+    case .next(let person):
       print("Found person: \(person)")
-    case .Error(let error):
+    case .error(let error):
       print(error)
     default:
       break
@@ -123,9 +123,9 @@ provider.request(ExampleAPI.GetObject)
   // .mapObject(Person.self, forKeyPath: "person")
   .start { (event) in
     switch event {
-    case .Next(let person):
+    case .value(let person):
       print("Found person: \(person)")
-    case .Failed(let error):
+    case .failed(let error):
       print(error)
     default:
       break
