@@ -1,41 +1,34 @@
 PODS:
-  - Alamofire (4.0.0)
+  - Alamofire (4.0.1)
   - Gloss (1.0.0)
-  - Moya (8.0.0-beta.1):
-    - Moya/Core (= 8.0.0-beta.1)
-  - Moya-Gloss (2.0.0):
-    - Moya-Gloss/Core (= 2.0.0)
-  - Moya-Gloss/Core (2.0.0):
+  - Moya (8.0.0-beta.2):
+    - Moya/Core (= 8.0.0-beta.2)
+  - Moya-Gloss (2.0.0-beta.1):
+    - Moya-Gloss/Core (= 2.0.0-beta.1)
+  - Moya-Gloss/Core (2.0.0-beta.1):
     - Gloss (~> 1.0)
-    - Moya (= 8.0.0-beta.1)
-  - Moya-Gloss/ReactiveCocoa (2.0.0):
+    - Moya (= 8.0.0-beta.2)
+  - Moya-Gloss/ReactiveCocoa (2.0.0-beta.1):
     - Moya-Gloss/Core
     - Moya/ReactiveCocoa
-    - ReactiveCocoa
-  - Moya-Gloss/RxSwift (2.0.0):
+    - ReactiveSwift (= 1.0.0-alpha.1)
+  - Moya-Gloss/RxSwift (2.0.0-beta.1):
     - Moya-Gloss/Core
     - Moya/RxSwift
     - RxCocoa (= 3.0.0-beta.1)
     - RxSwift (= 3.0.0-beta.1)
-  - Moya/Core (8.0.0-beta.1):
+  - Moya/Core (8.0.0-beta.2):
     - Alamofire (~> 4.0.0)
     - Result
-  - Moya/ReactiveCocoa (8.0.0-beta.1):
+  - Moya/ReactiveCocoa (8.0.0-beta.2):
     - Moya/Core
     - ReactiveSwift
-  - Moya/RxSwift (8.0.0-beta.1):
+  - Moya/RxSwift (8.0.0-beta.2):
     - Moya/Core
-    - RxSwift (= 3.0.0-beta.1)
+    - RxSwift
   - Nimble (5.0.0)
-  - Quick (0.9.3)
-  - ReactiveCocoa (2.5):
-    - ReactiveCocoa/UI (= 2.5)
-  - ReactiveCocoa/Core (2.5):
-    - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.5)
-  - ReactiveCocoa/UI (2.5):
-    - ReactiveCocoa/Core
-  - ReactiveSwift (0.0.1):
+  - Quick (0.10.0)
+  - ReactiveSwift (1.0.0-alpha.1):
     - Result (~> 3.0)
   - Result (3.0.0)
   - RxCocoa (3.0.0-beta.1):
@@ -45,55 +38,32 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.0.0)
   - Gloss (~> 1.0)
-  - Moya (from `https://github.com/Moya/Moya.git`, tag `8.0.0-beta.1`)
+  - Moya (= 8.0.0-beta.2)
   - Moya-Gloss (from `../`)
   - Moya-Gloss/ReactiveCocoa (from `../`)
   - Moya-Gloss/RxSwift (from `../`)
-  - Nimble (from `https://github.com/Quick/Nimble`, branch `master`)
-  - Quick (from `https://github.com/Quick/Quick`, branch `swift-3.0`)
-  - ReactiveSwift (from `https://raw.githubusercontent.com/ashfurrow/ReactiveSwift/ea5a7f9c7e31adf262be14173a80709c15d25300/ReactiveSwift.podspec`)
+  - Nimble
+  - Quick
+  - ReactiveSwift (= 1.0.0-alpha.1)
   - RxCocoa (= 3.0.0-beta.1)
   - RxSwift (= 3.0.0-beta.1)
 
 EXTERNAL SOURCES:
-  Moya:
-    :git: https://github.com/Moya/Moya.git
-    :tag: 8.0.0-beta.1
   Moya-Gloss:
     :path: "../"
-  Nimble:
-    :branch: master
-    :git: https://github.com/Quick/Nimble
-  Quick:
-    :branch: swift-3.0
-    :git: https://github.com/Quick/Quick
-  ReactiveSwift:
-    :podspec: https://raw.githubusercontent.com/ashfurrow/ReactiveSwift/ea5a7f9c7e31adf262be14173a80709c15d25300/ReactiveSwift.podspec
-
-CHECKOUT OPTIONS:
-  Moya:
-    :git: https://github.com/Moya/Moya.git
-    :tag: 8.0.0-beta.1
-  Nimble:
-    :commit: 0209419661b6acceff45cd63984596f2e9eea517
-    :git: https://github.com/Quick/Nimble
-  Quick:
-    :commit: 36ebbc75e093c7553a5145ed5dd21484364cd78d
-    :git: https://github.com/Quick/Quick
 
 SPEC CHECKSUMS:
-  Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   Gloss: 014789e9e69ca18f127eacca999f4c9b0bff6d58
-  Moya: 63c4a59d2643c824df8c5a3b3a5f38dc2b48b055
-  Moya-Gloss: a339354184f73dae7272d2763d7c7b346e1291d7
+  Moya: 920d40f738e6f4ece84010cec701bb9693be8251
+  Moya-Gloss: a6a053ab06cd917861a161ecf81be390cc0b8831
   Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
-  Quick: 31fb576b6cbb6b028cc5e0016e4366accbb346f5
-  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
-  ReactiveSwift: 07f7805f12097ee8315da8221878d29b93b7987d
+  Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
+  ReactiveSwift: cf34523b2b0dd8fbfc8fda484b0d0585e3d74955
   Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
   RxCocoa: 8cecf331302b8ae5381bbab1bccba4ede2eae6a8
   RxSwift: 0823e8d7969c23bfa9ddfb2afa4881e424a1a710
 
-PODFILE CHECKSUM: 9650025b809091d6107a7d050ad0fdfeb416e559
+PODFILE CHECKSUM: 31eea97c5a9e4b647154bc46fb3e88d409d09532
 
 COCOAPODS: 1.1.0.rc.2

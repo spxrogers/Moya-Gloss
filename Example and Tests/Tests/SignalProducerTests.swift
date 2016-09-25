@@ -3,7 +3,7 @@
 import Quick
 import Nimble
 import Moya
-import ReactiveCocoa
+import ReactiveSwift
 import Moya_Gloss
 
 class SignalProducerGlossSpec: QuickSpec {
@@ -30,7 +30,7 @@ class SignalProducerGlossSpec: QuickSpec {
           .mapObject(type: Person.self)
           .start { (event) in
             switch event {
-            case .next(let person):
+            case .value(let person):
               equal = steven == person
             case .failed(_):
               equal = false
@@ -55,7 +55,7 @@ class SignalProducerGlossSpec: QuickSpec {
           .mapArray(type: Person.self)
           .start { (event) in
             switch event {
-            case .next(let resultPeople):
+            case .value(let resultPeople):
               equal = people == resultPeople
             case .failed(_):
               equal = false
@@ -79,7 +79,7 @@ class SignalProducerGlossSpec: QuickSpec {
           .mapObject(type: Person.self, forKeyPath: "person")
           .start { (event) in
             switch event {
-            case .next(let person):
+            case .value(let person):
               equal = steven == person
             case .failed(_):
               equal = false
@@ -102,7 +102,7 @@ class SignalProducerGlossSpec: QuickSpec {
           .mapObject(type: Person.self, forKeyPath: "multi.nested.person")
           .start { (event) in
             switch event {
-            case .next(let person):
+            case .value(let person):
               equal = steven == person
             case .failed(_):
               equal = false
@@ -128,7 +128,7 @@ class SignalProducerGlossSpec: QuickSpec {
           .mapArray(type: Person.self, forKeyPath: "people")
           .start { (event) in
             switch event {
-            case .next(let resultPeople):
+            case .value(let resultPeople):
               equal = people == resultPeople
             case .failed(_):
               equal = false
@@ -153,7 +153,7 @@ class SignalProducerGlossSpec: QuickSpec {
           .mapArray(type: Person.self, forKeyPath: "multi.nested.people")
           .start { (event) in
             switch event {
-            case .next(let resultPeople):
+            case .value(let resultPeople):
               equal = people == resultPeople
             case .failed(_):
               equal = false
@@ -176,7 +176,7 @@ class SignalProducerGlossSpec: QuickSpec {
           .mapObject(type: Person.self)
           .start { (event) in
             switch event {
-            case .next(_):
+            case .value(_):
               failedWhenExpected = false
             case .failed(_):
               failedWhenExpected = true
@@ -197,7 +197,7 @@ class SignalProducerGlossSpec: QuickSpec {
           .mapObject(type: Person.self)
           .start { (event) in
             switch event {
-            case .next(_):
+            case .value(_):
               failedWhenExpected = false
             case .failed(_):
               failedWhenExpected = true
@@ -219,7 +219,7 @@ class SignalProducerGlossSpec: QuickSpec {
           .mapArray(type: Person.self)
           .start { (event) in
             switch event {
-            case .next(_):
+            case .value(_):
               failedWhenExpected = false
             case .failed(_):
               failedWhenExpected = true
@@ -240,7 +240,7 @@ class SignalProducerGlossSpec: QuickSpec {
           .mapObject(type: Person.self, forKeyPath: "doesnotexist")
           .start { (event) in
             switch event {
-            case .next(_):
+            case .value(_):
               failedWhenExpected = false
             case .failed(_):
               failedWhenExpected = true
@@ -263,7 +263,7 @@ class SignalProducerGlossSpec: QuickSpec {
           .mapObject(type: Person.self, forKeyPath: "multi.whoops")
           .start { (event) in
             switch event {
-            case .next(_):
+            case .value(_):
               failedWhenExpected = false
             case .failed(_):
               failedWhenExpected = true
@@ -286,7 +286,7 @@ class SignalProducerGlossSpec: QuickSpec {
           .mapArray(type: Person.self, forKeyPath: "doesnotexist")
           .start { (event) in
             switch event {
-            case .next(_):
+            case .value(_):
               failedWhenExpected = false
             case .failed(_):
               failedWhenExpected = true
@@ -309,7 +309,7 @@ class SignalProducerGlossSpec: QuickSpec {
           .mapArray(type: Person.self, forKeyPath: "multi.whoops")
           .start { (event) in
             switch event {
-            case .next(_):
+            case .value(_):
               failedWhenExpected = false
             case .failed(_):
               failedWhenExpected = true

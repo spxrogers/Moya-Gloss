@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 import RxSwift
-import ReactiveCocoa
+import ReactiveSwift
 import Moya_Gloss
 
 class ViewController: UIViewController {
@@ -99,7 +99,7 @@ class ViewController: UIViewController {
       .mapObject(type: Person.self)
       .start { (event) in
         switch event {
-        case .next(let person):
+        case .value(let person):
           self.text("Found person: \(person)")
         case .failed(let err):
           self.text("Failure: \(err)")
@@ -114,7 +114,7 @@ class ViewController: UIViewController {
       .mapArray(type: Person.self)
       .start { (event) in
         switch event {
-        case .next(let people):
+        case .value(let people):
           self.text("Found people: \(people)")
         case .failed(let err):
           self.text("Failure: \(err)")
