@@ -16,7 +16,7 @@ public extension SignalProducerProtocol where Value == Moya.Response, Error == M
   /// The signal errors on conversion failure.
   public func mapObject<T: Decodable>(type: T.Type) -> SignalProducer<T, Error> {
     return producer.flatMap(.latest) { response -> SignalProducer<T, Error> in
-      return unwrapThrowable { try response.mapObject(T) }
+      return unwrapThrowable { try response.mapObject(T.self) }
     }
   }
   
@@ -32,7 +32,7 @@ public extension SignalProducerProtocol where Value == Moya.Response, Error == M
   /// The signal errors on conversion failure.
   public func mapArray<T: Decodable>(type: T.Type) -> SignalProducer<[T], Error> {
     return producer.flatMap(.latest) { response -> SignalProducer<[T], Error> in
-      return unwrapThrowable { try response.mapArray(T) }
+      return unwrapThrowable { try response.mapArray(T.self) }
     }
   }
   

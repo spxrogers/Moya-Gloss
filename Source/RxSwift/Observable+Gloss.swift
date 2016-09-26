@@ -16,7 +16,7 @@ public extension ObservableType where E == Response {
   /// Observable .Errors's on failure.
   public func mapObject<T: Decodable>(type: T.Type) -> Observable<T> {
     return flatMap { response -> Observable<T> in
-      return Observable.just(try response.mapObject(T))
+      return Observable.just(try response.mapObject(T.self))
     }
   }
   
@@ -32,7 +32,7 @@ public extension ObservableType where E == Response {
   /// Observable .Errors's on failure.
   public func mapArray<T: Decodable>(type: T.Type) -> Observable<[T]> {
     return flatMap { (response) -> Observable<[T]> in
-      return Observable.just(try response.mapArray(T))
+      return Observable.just(try response.mapArray(T.self))
     }
   }
   

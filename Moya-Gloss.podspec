@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "Moya-Gloss"
-  s.version          = "2.0.0-beta.2"
+  s.version          = "2.0.0-beta.3"
   s.summary          = "Convenience Gloss bindings for Moya."
   s.description      = <<-EOS
     [Gloss](https://github.com/hkellaway/Gloss) bindings for
@@ -26,7 +26,6 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '9.0'
   s.tvos.deployment_target = '9.0'
-  s.watchos.deployment_target = '2.0'
   s.requires_arc = true
 
   s.default_subspec = "Core"
