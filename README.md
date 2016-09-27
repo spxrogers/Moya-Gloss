@@ -24,6 +24,17 @@ pod 'Moya-Gloss/RxSwift'
 pod 'Moya-Gloss/ReactiveCocoa'
 ```
 
+#### Swift 3 Support:
+
+Swift 3 support is here, but still in pre-release while Moya and the reactive libraries are stll pre-release as well. If you need `Moya-Gloss`'s Swift 3 version, your Podfile should look like this:
+
+```ruby
+pod 'Moya-Gloss', :git => 'https://github.com/spxrogers/Moya-Gloss', :tag => '2.0.0-beta.3'
+# or for reactive extensions
+pod 'Moya-Gloss/RxSwift', :git => 'https://github.com/spxrogers/Moya-Gloss', :tag => '2.0.0-beta.3'
+pod 'Moya-Gloss/ReactiveCocoa', :git => 'https://github.com/spxrogers/Moya-Gloss', :tag => '2.0.0-beta.3'
+```
+
 ### Carthage
 
 ```ruby
