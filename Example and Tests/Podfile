@@ -9,10 +9,10 @@ def core()
   pod 'Moya-Gloss/ReactiveCocoa', :path => '../'
   pod 'Gloss', '~> 1.0'
   pod 'Alamofire', '~> 4.0.0'
-  pod 'Moya', '8.0.0-beta.2'
-  pod 'RxSwift', '3.0.0-beta.1'
-  pod 'RxCocoa', '3.0.0-beta.1'
-  pod 'ReactiveSwift', '1.0.0-alpha.1'
+  pod 'Moya', '8.0.0-beta.4'
+  pod 'RxSwift', '3.0.1'
+  pod 'RxCocoa', '3.0.1'
+  pod 'ReactiveSwift', '1.0.0-alpha.3'
 end
 
 # Testing Libraries
@@ -31,4 +31,3 @@ target 'Tests' do
   core
   testing
 end
-

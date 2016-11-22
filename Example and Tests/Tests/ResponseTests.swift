@@ -16,7 +16,7 @@ class ResponseGlossSpec: QuickSpec {
 
     var provider: MoyaProvider<ExampleAPI>!
     beforeEach {
-      provider = MoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.ImmediatelyStub)
+      provider = MoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.immediatelyStub)
     }
 
     // standard

@@ -18,7 +18,7 @@ class ObservableGlossSpec: QuickSpec {
 
     var provider: RxMoyaProvider<ExampleAPI>!
     beforeEach {
-      provider = RxMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.ImmediatelyStub)
+      provider = RxMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.immediatelyStub)
     }
 
     // standard
