@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
 
   s.subspec "Core" do |ss|
     ss.source_files  = "Source/*.swift"
-    ss.dependency "Moya", "8.0.0-beta.2"
+    ss.dependency "Moya", "8.0.0-beta.4"
     ss.dependency "Gloss", "~> 1.0"
     ss.framework  = "Foundation"
   end
