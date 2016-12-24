@@ -25,6 +25,7 @@ Pod::Spec.new do |s|
   s.social_media_url = "https://twitter.com/spxrogers"
 
   s.ios.deployment_target = '9.0'
+  s.osx.deployment_target = '10.11'
   s.tvos.deployment_target = '9.0'
   s.requires_arc = true
 
