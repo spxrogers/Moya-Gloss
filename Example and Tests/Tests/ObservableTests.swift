@@ -23,7 +23,7 @@ class ObservableGlossSpec: QuickSpec {
 
     // standard
     it("handles a core object request") {
-      let steven = Person(json: ["name": "steven rogers", "age": 21])!
+      let steven = Person(json: ["name": "steven rogers", "age": 22])!
       var equal = false
 
       waitUntil(timeout: 5) { done in
@@ -45,7 +45,7 @@ class ObservableGlossSpec: QuickSpec {
     }
 
     it("handles a core array request") {
-      let steven = Person(json: ["name": "steven rogers", "age": 21])!
+      let steven = Person(json: ["name": "steven rogers", "age": 22])!
       let john = Person(json: ["name": "john doe"])!
       let people = [steven, john]
       var equal = false
@@ -70,7 +70,7 @@ class ObservableGlossSpec: QuickSpec {
 
     // nested object
     it("handles a core nested-object request") {
-      let steven = Person(json: ["name": "steven rogers", "age": 21])!
+      let steven = Person(json: ["name": "steven rogers", "age": 22])!
       var equal = false
       
       waitUntil(timeout: 5) { done in
@@ -92,7 +92,7 @@ class ObservableGlossSpec: QuickSpec {
     }
     
     it("handles a core multi-level nested-object request") {
-      let steven = Person(json: ["name": "steven rogers", "age": 21])!
+      let steven = Person(json: ["name": "steven rogers", "age": 22])!
       var equal = false
       
       waitUntil(timeout: 5) { done in
@@ -115,7 +115,7 @@ class ObservableGlossSpec: QuickSpec {
     
     // nested array
     it("handles a core nested-array request") {
-      let steven = Person(json: ["name": "steven rogers", "age": 21])!
+      let steven = Person(json: ["name": "steven rogers", "age": 22])!
       let john = Person(json: ["name": "john doe"])!
       let people = [steven, john]
       var equal = false
@@ -139,7 +139,7 @@ class ObservableGlossSpec: QuickSpec {
     }
     
     it("handles a core multi-level nested-array request") {
-      let steven = Person(json: ["name": "steven rogers", "age": 21])!
+      let steven = Person(json: ["name": "steven rogers", "age": 22])!
       let john = Person(json: ["name": "john doe"])!
       let people = [steven, john]
       var equal = false
