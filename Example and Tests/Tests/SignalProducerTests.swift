@@ -15,6 +15,10 @@ class SignalProducerGlossSpec: QuickSpec {
     let getBadObject = ExampleAPI.getBadObject
     let getBadFormat = ExampleAPI.getBadFormat
 
+    let steven = Person(json: ["name": "steven rogers", "age": 22])!
+    let john = Person(json: ["name": "john doe"])!
+    let people = [steven, john]
+
     var provider: ReactiveSwiftMoyaProvider<ExampleAPI>!
     beforeEach { 
       provider = ReactiveSwiftMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.immediatelyStub)
@@ -22,7 +26,6 @@ class SignalProducerGlossSpec: QuickSpec {
 
     // standard
     it("handles a core object request") {
-      let steven = Person(json: ["name": "steven rogers", "age": 22])!
       var equal = false
 
       waitUntil(timeout: 5) { done in
@@ -45,9 +48,6 @@ class SignalProducerGlossSpec: QuickSpec {
     }
 
     it("handles a core array request") {
-      let steven = Person(json: ["name": "steven rogers", "age": 22])!
-      let john = Person(json: ["name": "john doe"])!
-      let people = [steven, john]
       var equal = false
 
       waitUntil(timeout: 5) { done in
@@ -71,7 +71,6 @@ class SignalProducerGlossSpec: QuickSpec {
 
     // nested object
     it("handles a core nested-object request") {
-      let steven = Person(json: ["name": "steven rogers", "age": 22])!
       var equal = false
       
       waitUntil(timeout: 5) { done in
@@ -94,7 +93,6 @@ class SignalProducerGlossSpec: QuickSpec {
     }
     
     it("handles a core multi-level nested-object request") {
-      let steven = Person(json: ["name": "steven rogers", "age": 22])!
       var equal = false
       
       waitUntil(timeout: 5) { done in
@@ -118,9 +116,6 @@ class SignalProducerGlossSpec: QuickSpec {
     
     // nested array 
     it("handles a core nested-array request") {
-      let steven = Person(json: ["name": "steven rogers", "age": 22])!
-      let john = Person(json: ["name": "john doe"])!
-      let people = [steven, john]
       var equal = false
       
       waitUntil(timeout: 5) { done in
@@ -143,9 +138,6 @@ class SignalProducerGlossSpec: QuickSpec {
     }
     
     it("handles a core multi-level nested-array request") {
-      let steven = Person(json: ["name": "steven rogers", "age": 22])!
-      let john = Person(json: ["name": "john doe"])!
-      let people = [steven, john]
       var equal = false
       
       waitUntil(timeout: 5) { done in
