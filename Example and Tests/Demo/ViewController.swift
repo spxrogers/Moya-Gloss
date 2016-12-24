@@ -95,7 +95,7 @@ class ViewController: UIViewController {
   // MARK: - Moya with ReactiveCocoa Example
 
   @IBAction func racMapPerson(_ sender: UIButton) {
-    racStubbedProvider.request(token: object)
+    racStubbedProvider.request(object)
       .mapObject(type: Person.self)
       .start { (event) in
         switch event {
@@ -110,7 +110,7 @@ class ViewController: UIViewController {
   }
 
   @IBAction func racMapPeople(_ sender: UIButton) {
-    racStubbedProvider.request(token: array)
+    racStubbedProvider.request(array)
       .mapArray(type: Person.self)
       .start { (event) in
         switch event {

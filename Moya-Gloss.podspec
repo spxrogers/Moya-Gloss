@@ -1,11 +1,3 @@
-#
-# Be sure to run `pod lib lint Moya-Gloss.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = "Moya-Gloss"
   s.version          = "2.0.0-beta.3"
@@ -13,7 +5,7 @@ Pod::Spec.new do |s|
   s.description      = <<-EOS
     [Gloss](https://github.com/hkellaway/Gloss) bindings for
     [Moya](https://github.com/Moya/Moya) for fabulous JSON serialization.
-    [RxSwift](https://github.com/ReactiveX/RxSwift/) and [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa/) bindings also included.
+    [RxSwift](https://github.com/ReactiveX/RxSwift/) and [ReactiveSwift](https://github.com/ReactiveCocoa/ReactiveSwift/) bindings also included.
     Instructions on how to use it are in
     [the README](https://github.com/spxrogers/Moya-Gloss).
   EOS
@@ -25,7 +17,8 @@ Pod::Spec.new do |s|
   s.social_media_url = "https://twitter.com/spxrogers"
 
   s.ios.deployment_target = '9.0'
-  s.osx.deployment_target = '10.11'
+  s.osx.deployment_target = '10.10'
+  s.watchos.deployment_target = '2.0'
   s.tvos.deployment_target = '9.0'
   s.requires_arc = true
 
@@ -33,7 +26,7 @@ Pod::Spec.new do |s|
 
   s.subspec "Core" do |ss|
     ss.source_files  = "Source/*.swift"
-    ss.dependency "Moya", "8.0.0-beta.4"
+    ss.dependency "Moya", "8.0.0-beta.6"
     ss.dependency "Gloss", "~> 1.0"
     ss.framework  = "Foundation"
   end
@@ -42,15 +35,18 @@ Pod::Spec.new do |s|
     ss.source_files = "Source/RxSwift/*.swift"
     ss.dependency "Moya-Gloss/Core"
     ss.dependency "Moya/RxSwift"
-    ss.dependency 'RxSwift', '3.0.1'
-    ss.dependency 'RxCocoa', '3.0.1'
+    ss.dependency 'RxSwift', '~> 3.0'
+  end
+
+  s.subspec "ReactiveSwift" do |ss|
+    ss.source_files = "Source/ReactiveSwift/*.swift"
+    ss.dependency "Moya-Gloss/Core"
+    ss.dependency "Moya/ReactiveSwift"
+    ss.dependency 'ReactiveSwift', '1.0.0-alpha.4'
   end
 
   s.subspec "ReactiveCocoa" do |ss|
-    ss.source_files = "Source/ReactiveCocoa/*.swift"
-    ss.dependency "Moya-Gloss/Core"
-    ss.dependency "Moya/ReactiveCocoa"
-    ss.dependency 'ReactiveSwift', '1.0.0-alpha.3'
+    ss.dependency "Moya-Gloss/ReactiveSwift"
   end
 
 end

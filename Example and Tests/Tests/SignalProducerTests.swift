@@ -15,9 +15,9 @@ class SignalProducerGlossSpec: QuickSpec {
     let getBadObject = ExampleAPI.getBadObject
     let getBadFormat = ExampleAPI.getBadFormat
 
-    var provider: ReactiveCocoaMoyaProvider<ExampleAPI>!
+    var provider: ReactiveSwiftMoyaProvider<ExampleAPI>!
     beforeEach { 
-      provider = ReactiveCocoaMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.immediatelyStub)
+      provider = ReactiveSwiftMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.immediatelyStub)
     }
 
     // standard
@@ -26,7 +26,7 @@ class SignalProducerGlossSpec: QuickSpec {
       var equal = false
 
       waitUntil(timeout: 5) { done in
-        provider.request(token: getObject)
+        provider.request(getObject)
           .mapObject(type: Person.self)
           .start { (event) in
             switch event {
@@ -51,7 +51,7 @@ class SignalProducerGlossSpec: QuickSpec {
       var equal = false
 
       waitUntil(timeout: 5) { done in
-        provider.request(token: getArray)
+        provider.request(getArray)
           .mapArray(type: Person.self)
           .start { (event) in
             switch event {
@@ -75,7 +75,7 @@ class SignalProducerGlossSpec: QuickSpec {
       var equal = false
       
       waitUntil(timeout: 5) { done in
-        provider.request(token: getNestedObject)
+        provider.request(getNestedObject)
           .mapObject(type: Person.self, forKeyPath: "person")
           .start { (event) in
             switch event {
@@ -98,7 +98,7 @@ class SignalProducerGlossSpec: QuickSpec {
       var equal = false
       
       waitUntil(timeout: 5) { done in
-        provider.request(token: getNestedObject)
+        provider.request(getNestedObject)
           .mapObject(type: Person.self, forKeyPath: "multi.nested.person")
           .start { (event) in
             switch event {
@@ -124,7 +124,7 @@ class SignalProducerGlossSpec: QuickSpec {
       var equal = false
       
       waitUntil(timeout: 5) { done in
-        provider.request(token: getNestedArray)
+        provider.request(getNestedArray)
           .mapArray(type: Person.self, forKeyPath: "people")
           .start { (event) in
             switch event {
@@ -149,7 +149,7 @@ class SignalProducerGlossSpec: QuickSpec {
       var equal = false
       
       waitUntil(timeout: 5) { done in
-        provider.request(token: getNestedArray)
+        provider.request(getNestedArray)
           .mapArray(type: Person.self, forKeyPath: "multi.nested.people")
           .start { (event) in
             switch event {
@@ -172,7 +172,7 @@ class SignalProducerGlossSpec: QuickSpec {
       var failedWhenExpected = false
 
       waitUntil(timeout: 5) { done in
-        provider.request(token: getBadObject)
+        provider.request(getBadObject)
           .mapObject(type: Person.self)
           .start { (event) in
             switch event {
@@ -193,7 +193,7 @@ class SignalProducerGlossSpec: QuickSpec {
       var failedWhenExpected = false
 
       waitUntil(timeout: 5) { done in
-        provider.request(token: getBadFormat)
+        provider.request(getBadFormat)
           .mapObject(type: Person.self)
           .start { (event) in
             switch event {
@@ -215,7 +215,7 @@ class SignalProducerGlossSpec: QuickSpec {
       var failedWhenExpected = false
 
       waitUntil(timeout: 5) { done in
-        provider.request(token: getBadFormat)
+        provider.request(getBadFormat)
           .mapArray(type: Person.self)
           .start { (event) in
             switch event {
@@ -236,7 +236,7 @@ class SignalProducerGlossSpec: QuickSpec {
       var failedWhenExpected = false
       
       waitUntil(timeout: 5) { done in
-        provider.request(token: getNestedObject)
+        provider.request(getNestedObject)
           .mapObject(type: Person.self, forKeyPath: "doesnotexist")
           .start { (event) in
             switch event {
@@ -259,7 +259,7 @@ class SignalProducerGlossSpec: QuickSpec {
       var failedWhenExpected = false
       
       waitUntil(timeout: 5) { done in
-        provider.request(token: getNestedObject)
+        provider.request(getNestedObject)
           .mapObject(type: Person.self, forKeyPath: "multi.whoops")
           .start { (event) in
             switch event {
@@ -282,7 +282,7 @@ class SignalProducerGlossSpec: QuickSpec {
       var failedWhenExpected = false
       
       waitUntil(timeout: 5) { done in
-        provider.request(token: getNestedArray)
+        provider.request(getNestedArray)
           .mapArray(type: Person.self, forKeyPath: "doesnotexist")
           .start { (event) in
             switch event {
@@ -305,7 +305,7 @@ class SignalProducerGlossSpec: QuickSpec {
       var failedWhenExpected = false
       
       waitUntil(timeout: 5) { done in
-        provider.request(token: getNestedArray)
+        provider.request(getNestedArray)
           .mapArray(type: Person.self, forKeyPath: "multi.whoops")
           .start { (event) in
             switch event {

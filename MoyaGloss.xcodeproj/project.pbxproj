@@ -132,17 +132,17 @@
 			children = (
 				B01E39491CC44A9A009D9FC9 /* Response+Gloss.swift */,
 				B01E394A1CC44A9A009D9FC9 /* RxSwift */,
-				B01E39471CC44A9A009D9FC9 /* ReactiveCocoa */,
+				B01E39471CC44A9A009D9FC9 /* ReactiveSwift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
 		};
-		B01E39471CC44A9A009D9FC9 /* ReactiveCocoa */ = {
+		B01E39471CC44A9A009D9FC9 /* ReactiveSwift */ = {
 			isa = PBXGroup;
 			children = (
 				B01E39481CC44A9A009D9FC9 /* SignalProducer+Gloss.swift */,
 			);
-			path = ReactiveCocoa;
+			path = ReactiveSwift;
 			sourceTree = "<group>";
 		};
 		B01E394A1CC44A9A009D9FC9 /* RxSwift */ = {

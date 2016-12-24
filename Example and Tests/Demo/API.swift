@@ -11,7 +11,7 @@ import Moya
 
 let stubbedProvider = MoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.immediatelyStub)
 let rxStubbedProvider = RxMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.immediatelyStub)
-let racStubbedProvider = ReactiveCocoaMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.immediatelyStub)
+let racStubbedProvider = ReactiveSwiftMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.immediatelyStub)
 
 enum ExampleAPI {
   case getObject
