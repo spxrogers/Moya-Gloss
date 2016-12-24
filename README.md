@@ -9,7 +9,7 @@ Supports [RxSwift](https://github.com/ReactiveX/RxSwift/) and [ReactiveCocoa](ht
 
 # Installation
 
-### CocoaPods
+## CocoaPods
 
 Add to your Podfile:
 
@@ -17,25 +17,14 @@ Add to your Podfile:
 pod 'Moya-Gloss'
 ```
 
-The subspec(s) if you want to use the bindings over RxSwift or ReactiveCocoa.
+The subspec(s) if you want to use the bindings over RxSwift or ReactiveSwift (or ReactiveCocoa).
 
 ```ruby
 pod 'Moya-Gloss/RxSwift'
-pod 'Moya-Gloss/ReactiveCocoa'
+pod 'Moya-Gloss/ReactiveSwift'
 ```
 
-#### Swift 3 Support:
-
-Swift 3 support is here, but still in pre-release while Moya and the reactive libraries are stll pre-release as well. If you need `Moya-Gloss`'s Swift 3 version, your Podfile should look like this:
-
-```ruby
-pod 'Moya-Gloss', :git => 'https://github.com/spxrogers/Moya-Gloss', :tag => '2.0.0-beta.3'
-# or for reactive extensions
-pod 'Moya-Gloss/RxSwift', :git => 'https://github.com/spxrogers/Moya-Gloss', :tag => '2.0.0-beta.3'
-pod 'Moya-Gloss/ReactiveCocoa', :git => 'https://github.com/spxrogers/Moya-Gloss', :tag => '2.0.0-beta.3'
-```
-
-### Carthage
+## Carthage
 
 ```ruby
 github "spxrogers/Moya-Gloss"
@@ -52,7 +41,7 @@ will give you an "Ambiguous use..." error.**
 
 # Usage
 
-### Define your Model
+## Define your Model
 
 Create a `Class` or `Struct` which implements the `Decodable` (or `Glossy`) protocol.
 
@@ -75,7 +64,7 @@ struct Person: Decodable {
 }
 ```
 
-### API
+## API
 
 ```swift
 mapObject()
@@ -84,7 +73,7 @@ mapArray()
 mapArray(forKeyPath:)
 ```
 
-## 1. Example
+### 1. Example
 
 
 ```swift
@@ -92,7 +81,7 @@ provider.request(ExampleAPI.GetObject) { (result) in
   switch result {
   case .success(let response):
     do {
-      let person = try response.mapObject(Person)
+      let person = try response.mapObject(Person.self)
       // *OR* the line below for a keyPath
       // let person = try response.mapObject(Person.self, forKeyPath: "person")
       print("Found person: \(person)")
@@ -105,11 +94,11 @@ provider.request(ExampleAPI.GetObject) { (result) in
 }
 ```
 
-## 2. Example With RxSwift
+### 2. Example With RxSwift
 
 ```swift
 provider.request(ExampleAPI.GetObject)
-  .mapObject(Person)
+  .mapObject(type: Person.self)
   // *OR* the line below for a keyPath
   // .mapObject(Person.self, forKeyPath: "multi.nested.person")
   .subscribe { (event) in
@@ -125,11 +114,11 @@ provider.request(ExampleAPI.GetObject)
   .addDisposableTo(your_preferred_dispose_bag)
 ```
 
-## 3. Example With ReactiveCocoa
+### 3. Example With ReactiveCocoa
 
 ```swift
 provider.request(ExampleAPI.GetObject)
-  .mapObject(Person)
+  .mapObject(type: Person.self)
   // *OR* the line below for a keyPath
   // .mapObject(Person.self, forKeyPath: "person")
   .start { (event) in
