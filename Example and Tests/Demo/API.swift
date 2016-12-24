@@ -9,9 +9,9 @@
 import Foundation
 import Moya
 
-let stubbedProvider = MoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.ImmediatelyStub)
-let rxStubbedProvider = RxMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.ImmediatelyStub)
-let racStubbedProvider = ReactiveCocoaMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.ImmediatelyStub)
+let stubbedProvider = MoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.immediatelyStub)
+let rxStubbedProvider = RxMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.immediatelyStub)
+let racStubbedProvider = ReactiveCocoaMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.immediatelyStub)
 
 enum ExampleAPI {
   case getObject
@@ -43,7 +43,7 @@ extension ExampleAPI: TargetType {
   }
 
   var method: Moya.Method {
-    return .GET
+    return .get
   }
 
   var parameters: [String: Any]? {

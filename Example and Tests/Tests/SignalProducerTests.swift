@@ -17,7 +17,7 @@ class SignalProducerGlossSpec: QuickSpec {
 
     var provider: ReactiveCocoaMoyaProvider<ExampleAPI>!
     beforeEach { 
-      provider = ReactiveCocoaMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.ImmediatelyStub)
+      provider = ReactiveCocoaMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.immediatelyStub)
     }
 
     // standard
