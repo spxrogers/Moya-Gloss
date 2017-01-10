@@ -18,7 +18,7 @@ public extension Response {
       let json = try mapJSON() as? JSON,
       let result = T(json: json)
     else {
-      throw Error.jsonMapping(self)
+      throw MoyaError.jsonMapping(self)
     }
     return result
   }
@@ -31,7 +31,7 @@ public extension Response {
       let nested = json.value(forKeyPath: keyPath) as? JSON,
       let result = T(json: nested)
     else {
-      throw Error.jsonMapping(self)
+      throw MoyaError.jsonMapping(self)
     }
     return result
   }
@@ -42,13 +42,13 @@ public extension Response {
     guard
       let json = try mapJSON() as? [JSON]
     else {
-      throw Error.jsonMapping(self)
+      throw MoyaError.jsonMapping(self)
     }
 
     if let models = [T].from(jsonArray: json) {
       return models
     } else {
-      throw Error.jsonMapping(self)
+      throw MoyaError.jsonMapping(self)
     }
   }
   
@@ -59,13 +59,13 @@ public extension Response {
       let json = try mapJSON() as? NSDictionary,
       let nested = json.value(forKeyPath: keyPath) as? [JSON]
     else {
-      throw Error.jsonMapping(self)
+      throw MoyaError.jsonMapping(self)
     }
 
     if let models = [T].from(jsonArray: nested) {
       return models
     } else {
-      throw Error.jsonMapping(self)
+      throw MoyaError.jsonMapping(self)
     }
   }
 }
