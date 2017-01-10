@@ -1,12 +1,23 @@
 # Change Log
 `Moya-Gloss` adheres to [Semantic Versioning](http://semver.org/).
 
+- [2.0.0](#200)
 - [2.0.0-beta.5](#200-beta5)
 - [1.3.0](#130)
 - [1.2.0](#120)
 - [1.1.1](#111)
 - [1.1.0](#110)
 - [1.0.0](#100)
+
+---
+
+## [2.0.0](https://github.com/spxrogers/Moya-Gloss/releases/tag/2.0.0)
+
+#### Updated
+- Major version release.
+- Official Swift 3 support.
+- Moya version [8.x](https://github.com/Moya/Moya/releases/tag/8.0.0).
+- Gloss version [1.x](https://github.com/hkellaway/Gloss/releases/tag/1.1.1)
 
 ---
 

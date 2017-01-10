@@ -73,7 +73,9 @@ mapArray()
 mapArray(forKeyPath:)
 ```
 
-## 1. Example
+# Examples
+
+### 1. Example with no reactive extension
 
 
 ```swift
@@ -94,7 +96,7 @@ provider.request(ExampleAPI.GetObject) { (result) in
 }
 ```
 
-## 2. Example With RxSwift
+### 2. Example with RxSwift
 
 ```swift
 provider.request(ExampleAPI.GetObject)
@@ -114,7 +116,7 @@ provider.request(ExampleAPI.GetObject)
   .addDisposableTo(your_preferred_dispose_bag)
 ```
 
-## 3. Example With ReactiveCocoa
+### 3. Example with ReactiveCocoa
 
 ```swift
 provider.request(ExampleAPI.GetObject)
