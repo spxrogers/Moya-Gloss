@@ -26,8 +26,8 @@ Pod::Spec.new do |s|
 
   s.subspec "Core" do |ss|
     ss.source_files  = "Source/*.swift"
-    ss.dependency "Moya", "8.0.0"
-    ss.dependency "Gloss", "~> 1.1.1"
+    ss.dependency "Moya", "~> 8.0"
+    ss.dependency "Gloss", "~> 1.1"
     ss.framework  = "Foundation"
   end
 
@@ -42,7 +42,7 @@ Pod::Spec.new do |s|
     ss.source_files = "Source/ReactiveSwift/*.swift"
     ss.dependency "Moya-Gloss/Core"
     ss.dependency "Moya/ReactiveSwift"
-    ss.dependency 'ReactiveSwift', '1.0.0-alpha.4'
+    ss.dependency 'ReactiveSwift', '~> 1.0'
   end
 
   s.subspec "ReactiveCocoa" do |ss|

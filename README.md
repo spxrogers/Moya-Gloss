@@ -5,11 +5,11 @@ Moya-Gloss
 compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 [Gloss](https://github.com/hkellaway/Gloss) bindings for [Moya](https://github.com/Moya/Moya) for fabulous JSON serialization.
-Supports [RxSwift](https://github.com/ReactiveX/RxSwift/) and [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa/) bindings as well.
+Supports [RxSwift](https://github.com/ReactiveX/RxSwift/) and [ReactiveSwift](https://github.com/ReactiveCocoa/ReactiveSwift/) bindings as well.
 
 # Installation
 
-## CocoaPods
+### CocoaPods
 
 Add to your Podfile:
 
@@ -24,7 +24,7 @@ pod 'Moya-Gloss/RxSwift'
 pod 'Moya-Gloss/ReactiveSwift'
 ```
 
-## Carthage
+### Carthage
 
 ```ruby
 github "spxrogers/Moya-Gloss"
@@ -41,7 +41,7 @@ will give you an "Ambiguous use..." error.**
 
 # Usage
 
-## Define your Model
+### Define your Model
 
 Create a `Class` or `Struct` which implements the `Decodable` (or `Glossy`) protocol.
 
@@ -64,7 +64,7 @@ struct Person: Decodable {
 }
 ```
 
-## API
+### API
 
 ```swift
 mapObject()
@@ -73,7 +73,7 @@ mapArray()
 mapArray(forKeyPath:)
 ```
 
-### 1. Example
+## 1. Example
 
 
 ```swift
@@ -94,7 +94,7 @@ provider.request(ExampleAPI.GetObject) { (result) in
 }
 ```
 
-### 2. Example With RxSwift
+## 2. Example With RxSwift
 
 ```swift
 provider.request(ExampleAPI.GetObject)
@@ -114,7 +114,7 @@ provider.request(ExampleAPI.GetObject)
   .addDisposableTo(your_preferred_dispose_bag)
 ```
 
-### 3. Example With ReactiveCocoa
+## 3. Example With ReactiveCocoa
 
 ```swift
 provider.request(ExampleAPI.GetObject)

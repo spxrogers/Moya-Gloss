@@ -23,6 +23,7 @@ enum ExampleAPI {
 }
 
 extension ExampleAPI: TargetType {
+
   var baseURL: URL { return URL(string: "http://srogers.net/rest")! }
 
   var path: String {
@@ -48,6 +49,10 @@ extension ExampleAPI: TargetType {
 
   var parameters: [String: Any]? {
     return nil
+  }
+
+  var parameterEncoding: ParameterEncoding {
+    return JSONEncoding.default
   }
 
   var sampleData: Data {

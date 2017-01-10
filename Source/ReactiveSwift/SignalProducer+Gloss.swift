@@ -10,7 +10,7 @@ import Moya
 import Gloss
 
 /// Extension for transforming Moya Responses into Decodable object(s) via Gloss with RAC goodness
-public extension SignalProducerProtocol where Value == Moya.Response, Error == Moya.Error {
+public extension SignalProducerProtocol where Value == Moya.Response, Error == Moya.MoyaError {
 
   /// Maps data received from the signal into a model object implementing the Decodable protocol.
   /// The signal errors on conversion failure.
