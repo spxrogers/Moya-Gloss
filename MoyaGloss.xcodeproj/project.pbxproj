@@ -266,13 +266,15 @@
 				TargetAttributes = {
 					B01E393A1CC44A42009D9FC9 = {
 						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0830;
 					};
 					B01E398C1CC45ABC009D9FC9 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0830;
 					};
 					B0D2DE661CC45B5500577F82 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -550,6 +552,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.srogers.RxMoyaGloss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -572,6 +575,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.srogers.RxMoyaGloss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -594,6 +598,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.srogers.ReactiveMoyaGloss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -616,6 +621,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.srogers.ReactiveMoyaGloss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
