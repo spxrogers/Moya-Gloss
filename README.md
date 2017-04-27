@@ -149,7 +149,9 @@ Steven Rogers [@spxrogers](https://twitter.com/spxrogers)
 
 ... to the [Moya](https://github.com/Moya) team for a wonderful network library.
 
-... and finally, to the authors of the existing Moya community extensions for inspiring me to make one for Gloss.
+... to the authors of the existing Moya community extensions for inspiring me to make one for Gloss.
+
+... and finally, to everyone in the community that has [contributed back](https://github.com/spxrogers/Moya-Gloss/graphs/contributors) :heart:
 
 # License
 
