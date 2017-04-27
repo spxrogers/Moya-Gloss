@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Moya-Gloss"
-  s.version          = "2.0.0"
+  s.version          = "2.0.1"
   s.summary          = "Convenience Gloss bindings for Moya."
   s.description      = <<-EOS
     [Gloss](https://github.com/hkellaway/Gloss) bindings for
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
   s.subspec "Core" do |ss|
     ss.source_files  = "Source/*.swift"
     ss.dependency "Moya", "~> 8.0"
-    ss.dependency "Gloss", "~> 1.1"
+    ss.dependency "Gloss", "~> 1.2"
     ss.framework  = "Foundation"
   end
 
@@ -35,14 +35,14 @@ Pod::Spec.new do |s|
     ss.source_files = "Source/RxSwift/*.swift"
     ss.dependency "Moya-Gloss/Core"
     ss.dependency "Moya/RxSwift"
-    ss.dependency 'RxSwift', '~> 3.0'
+    ss.dependency 'RxSwift', '~> 3.4'
   end
 
   s.subspec "ReactiveSwift" do |ss|
     ss.source_files = "Source/ReactiveSwift/*.swift"
     ss.dependency "Moya-Gloss/Core"
     ss.dependency "Moya/ReactiveSwift"
-    ss.dependency 'ReactiveSwift', '~> 1.0'
+    ss.dependency 'ReactiveSwift', '~> 1.1'
   end
 
   s.subspec "ReactiveCocoa" do |ss|

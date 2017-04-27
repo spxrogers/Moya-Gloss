@@ -1,6 +1,7 @@
 # Change Log
 `Moya-Gloss` adheres to [Semantic Versioning](http://semver.org/).
 
+- [2.0.1](#201)
 - [2.0.0](#200)
 - [2.0.0-beta.5](#200-beta5)
 - [1.3.0](#130)
@@ -8,6 +9,18 @@
 - [1.1.1](#111)
 - [1.1.0](#110)
 - [1.0.0](#100)
+
+---
+
+## [2.0.1](https://github.com/spxrogers/Moya-Gloss/releases/tag/2.0.1)
+
+#### Updated
+- Patch version release.
+- Fixed long-sitting carthage bugs, thanks to the community support :heart:
+- Should be Swift 3.1 compatible.
+- Updated `Gloss` pod dependency to [1.2.x](https://github.com/hkellaway/Gloss/releases/tag/1.2.0)
+- Updated `RxSwift` pod dependency to [3.4.x](https://github.com/ReactiveX/RxSwift/releases/tag/3.4.0)
+- Updated `ReactiveSwift` pod dependency to [1.1.x](https://github.com/ReactiveCocoa/ReactiveSwift/releases/tag/1.1.1)
 
 ---
 
