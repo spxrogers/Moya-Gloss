@@ -30,6 +30,28 @@
 		B0D2DE751CC45C5400577F82 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01E39781CC451B8009D9FC9 /* ReactiveCocoa.framework */; };
 		B0D2DE761CC45C5400577F82 /* ReactiveMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01E39791CC451B8009D9FC9 /* ReactiveMoya.framework */; };
 		B0D68E781D10EFF70045857D /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01E397B1CC451B8009D9FC9 /* RxCocoa.framework */; };
+		E90E615B1EA15F4D00E2DC19 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90E61571EA15F4C00E2DC19 /* Alamofire.framework */; };
+		E90E615C1EA15F4D00E2DC19 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90E61581EA15F4D00E2DC19 /* Gloss.framework */; };
+		E90E615D1EA15F4D00E2DC19 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90E61591EA15F4D00E2DC19 /* Moya.framework */; };
+		E90E615E1EA15F4D00E2DC19 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90E615A1EA15F4D00E2DC19 /* Result.framework */; };
+		E90E615F1EA15F5D00E2DC19 /* Response+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01E39491CC44A9A009D9FC9 /* Response+Gloss.swift */; };
+		E90E61601EA15FAC00E2DC19 /* MoyaGloss.h in Headers */ = {isa = PBXBuildFile; fileRef = B01E393E1CC44A42009D9FC9 /* MoyaGloss.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E90E616F1EA1611000E2DC19 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90E61571EA15F4C00E2DC19 /* Alamofire.framework */; };
+		E90E61701EA1611000E2DC19 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90E61581EA15F4D00E2DC19 /* Gloss.framework */; };
+		E90E61711EA1611000E2DC19 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90E615A1EA15F4D00E2DC19 /* Result.framework */; };
+		E90E61751EA1611000E2DC19 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90E61721EA1611000E2DC19 /* RxCocoa.framework */; };
+		E90E61761EA1611000E2DC19 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90E61731EA1611000E2DC19 /* RxMoya.framework */; };
+		E90E61771EA1611000E2DC19 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90E61741EA1611000E2DC19 /* RxSwift.framework */; };
+		E90E61781EA1612E00E2DC19 /* Observable+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01E394B1CC44A9A009D9FC9 /* Observable+Gloss.swift */; };
+		E90E61791EA1613500E2DC19 /* Response+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01E39491CC44A9A009D9FC9 /* Response+Gloss.swift */; };
+		E90E617A1EA1614F00E2DC19 /* RxMoyaGloss.h in Headers */ = {isa = PBXBuildFile; fileRef = B01E398F1CC45ABC009D9FC9 /* RxMoyaGloss.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E90E61891EA161C400E2DC19 /* SignalProducer+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01E39481CC44A9A009D9FC9 /* SignalProducer+Gloss.swift */; };
+		E90E618A1EA161C700E2DC19 /* Response+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01E39491CC44A9A009D9FC9 /* Response+Gloss.swift */; };
+		E90E618B1EA1620200E2DC19 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90E61571EA15F4C00E2DC19 /* Alamofire.framework */; };
+		E90E618C1EA1620200E2DC19 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90E61581EA15F4D00E2DC19 /* Gloss.framework */; };
+		E90E618D1EA1620200E2DC19 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90E615A1EA15F4D00E2DC19 /* Result.framework */; };
+		E90E618F1EA1620200E2DC19 /* ReactiveMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90E618E1EA1620200E2DC19 /* ReactiveMoya.framework */; };
+		E90E61901EA1621C00E2DC19 /* ReactiveMoyaGloss.h in Headers */ = {isa = PBXBuildFile; fileRef = B0D2DE691CC45B5500577F82 /* ReactiveMoyaGloss.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +74,19 @@
 		B01E398F1CC45ABC009D9FC9 /* RxMoyaGloss.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxMoyaGloss.h; sourceTree = "<group>"; };
 		B0D2DE671CC45B5500577F82 /* ReactiveMoyaGloss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveMoyaGloss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D2DE691CC45B5500577F82 /* ReactiveMoyaGloss.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveMoyaGloss.h; sourceTree = "<group>"; };
+		E90E614E1EA157A700E2DC19 /* MoyaGloss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoyaGloss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E90E61571EA15F4C00E2DC19 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
+		E90E61581EA15F4D00E2DC19 /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/Mac/Gloss.framework; sourceTree = "<group>"; };
+		E90E61591EA15F4D00E2DC19 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/Mac/Moya.framework; sourceTree = "<group>"; };
+		E90E615A1EA15F4D00E2DC19 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
+		E90E61671EA1607B00E2DC19 /* RxMoyaGloss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxMoyaGloss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E90E616A1EA1607B00E2DC19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E90E61721EA1611000E2DC19 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
+		E90E61731EA1611000E2DC19 /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/Mac/RxMoya.framework; sourceTree = "<group>"; };
+		E90E61741EA1611000E2DC19 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
+		E90E61811EA1617F00E2DC19 /* ReactiveMoyaGloss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveMoyaGloss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E90E61841EA1617F00E2DC19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E90E618E1EA1620200E2DC19 /* ReactiveMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveMoya.framework; path = Carthage/Build/Mac/ReactiveMoya.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +126,41 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E90E614A1EA157A700E2DC19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E90E615B1EA15F4D00E2DC19 /* Alamofire.framework in Frameworks */,
+				E90E615C1EA15F4D00E2DC19 /* Gloss.framework in Frameworks */,
+				E90E615D1EA15F4D00E2DC19 /* Moya.framework in Frameworks */,
+				E90E615E1EA15F4D00E2DC19 /* Result.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E90E61631EA1607B00E2DC19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E90E61751EA1611000E2DC19 /* RxCocoa.framework in Frameworks */,
+				E90E61761EA1611000E2DC19 /* RxMoya.framework in Frameworks */,
+				E90E61771EA1611000E2DC19 /* RxSwift.framework in Frameworks */,
+				E90E616F1EA1611000E2DC19 /* Alamofire.framework in Frameworks */,
+				E90E61701EA1611000E2DC19 /* Gloss.framework in Frameworks */,
+				E90E61711EA1611000E2DC19 /* Result.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E90E617D1EA1617F00E2DC19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E90E618F1EA1620200E2DC19 /* ReactiveMoya.framework in Frameworks */,
+				E90E618B1EA1620200E2DC19 /* Alamofire.framework in Frameworks */,
+				E90E618C1EA1620200E2DC19 /* Gloss.framework in Frameworks */,
+				E90E618D1EA1620200E2DC19 /* Result.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -99,8 +169,11 @@
 			children = (
 				B01E39461CC44A9A009D9FC9 /* Source */,
 				B01E393D1CC44A42009D9FC9 /* Supporting Files */,
+				E90E61681EA1607B00E2DC19 /* RxMoyaGloss-macOS */,
+				E90E61821EA1617F00E2DC19 /* ReactiveMoyaGloss-macOS */,
 				B01E393C1CC44A42009D9FC9 /* Products */,
 				B01E39871CC45223009D9FC9 /* Dependencies */,
+				E90E61561EA15F4C00E2DC19 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -112,6 +185,9 @@
 				B01E393B1CC44A42009D9FC9 /* MoyaGloss.framework */,
 				B01E398D1CC45ABC009D9FC9 /* RxMoyaGloss.framework */,
 				B0D2DE671CC45B5500577F82 /* ReactiveMoyaGloss.framework */,
+				E90E614E1EA157A700E2DC19 /* MoyaGloss.framework */,
+				E90E61671EA1607B00E2DC19 /* RxMoyaGloss.framework */,
+				E90E61811EA1617F00E2DC19 /* ReactiveMoyaGloss.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,6 +245,37 @@
 			name = Dependencies;
 			sourceTree = "<group>";
 		};
+		E90E61561EA15F4C00E2DC19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E90E618E1EA1620200E2DC19 /* ReactiveMoya.framework */,
+				E90E61721EA1611000E2DC19 /* RxCocoa.framework */,
+				E90E61731EA1611000E2DC19 /* RxMoya.framework */,
+				E90E61741EA1611000E2DC19 /* RxSwift.framework */,
+				E90E61571EA15F4C00E2DC19 /* Alamofire.framework */,
+				E90E61581EA15F4D00E2DC19 /* Gloss.framework */,
+				E90E61591EA15F4D00E2DC19 /* Moya.framework */,
+				E90E615A1EA15F4D00E2DC19 /* Result.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E90E61681EA1607B00E2DC19 /* RxMoyaGloss-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				E90E616A1EA1607B00E2DC19 /* Info.plist */,
+			);
+			path = "RxMoyaGloss-macOS";
+			sourceTree = "<group>";
+		};
+		E90E61821EA1617F00E2DC19 /* ReactiveMoyaGloss-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				E90E61841EA1617F00E2DC19 /* Info.plist */,
+			);
+			path = "ReactiveMoyaGloss-macOS";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -193,6 +300,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0D2DE6A1CC45B5500577F82 /* ReactiveMoyaGloss.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E90E614B1EA157A700E2DC19 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E90E61601EA15FAC00E2DC19 /* MoyaGloss.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E90E61641EA1607B00E2DC19 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E90E617A1EA1614F00E2DC19 /* RxMoyaGloss.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E90E617E1EA1617F00E2DC19 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E90E61901EA1621C00E2DC19 /* ReactiveMoyaGloss.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +387,63 @@
 			productReference = B0D2DE671CC45B5500577F82 /* ReactiveMoyaGloss.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		E90E614D1EA157A700E2DC19 /* MoyaGloss-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E90E61551EA157A700E2DC19 /* Build configuration list for PBXNativeTarget "MoyaGloss-macOS" */;
+			buildPhases = (
+				E90E61491EA157A700E2DC19 /* Sources */,
+				E90E614A1EA157A700E2DC19 /* Frameworks */,
+				E90E614B1EA157A700E2DC19 /* Headers */,
+				E90E614C1EA157A700E2DC19 /* Resources */,
+				E90E61611EA15FBE00E2DC19 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MoyaGloss-macOS";
+			productName = "MoyaGloss-macOS";
+			productReference = E90E614E1EA157A700E2DC19 /* MoyaGloss.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E90E61661EA1607B00E2DC19 /* RxMoyaGloss-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E90E616C1EA1607B00E2DC19 /* Build configuration list for PBXNativeTarget "RxMoyaGloss-macOS" */;
+			buildPhases = (
+				E90E61621EA1607B00E2DC19 /* Sources */,
+				E90E61631EA1607B00E2DC19 /* Frameworks */,
+				E90E61641EA1607B00E2DC19 /* Headers */,
+				E90E61651EA1607B00E2DC19 /* Resources */,
+				E90E617B1EA1615F00E2DC19 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RxMoyaGloss-macOS";
+			productName = "RxMoyaGloss-macOS";
+			productReference = E90E61671EA1607B00E2DC19 /* RxMoyaGloss.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E90E61801EA1617F00E2DC19 /* ReactiveMoyaGloss-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E90E61861EA1617F00E2DC19 /* Build configuration list for PBXNativeTarget "ReactiveMoyaGloss-macOS" */;
+			buildPhases = (
+				E90E617C1EA1617F00E2DC19 /* Sources */,
+				E90E617D1EA1617F00E2DC19 /* Frameworks */,
+				E90E617E1EA1617F00E2DC19 /* Headers */,
+				E90E617F1EA1617F00E2DC19 /* Resources */,
+				E90E61911EA1623800E2DC19 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ReactiveMoyaGloss-macOS";
+			productName = "ReactiveMoyaGloss-macOS";
+			productReference = E90E61811EA1617F00E2DC19 /* ReactiveMoyaGloss.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -274,6 +462,18 @@
 					B0D2DE661CC45B5500577F82 = {
 						CreatedOnToolsVersion = 7.3;
 					};
+					E90E614D1EA157A700E2DC19 = {
+						CreatedOnToolsVersion = 8.3.1;
+						ProvisioningStyle = Automatic;
+					};
+					E90E61661EA1607B00E2DC19 = {
+						CreatedOnToolsVersion = 8.3.1;
+						ProvisioningStyle = Automatic;
+					};
+					E90E61801EA1617F00E2DC19 = {
+						CreatedOnToolsVersion = 8.3.1;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = B01E39351CC44A42009D9FC9 /* Build configuration list for PBXProject "MoyaGloss" */;
@@ -291,6 +491,9 @@
 				B01E393A1CC44A42009D9FC9 /* MoyaGloss */,
 				B01E398C1CC45ABC009D9FC9 /* RxMoyaGloss */,
 				B0D2DE661CC45B5500577F82 /* ReactiveMoyaGloss */,
+				E90E614D1EA157A700E2DC19 /* MoyaGloss-macOS */,
+				E90E61661EA1607B00E2DC19 /* RxMoyaGloss-macOS */,
+				E90E61801EA1617F00E2DC19 /* ReactiveMoyaGloss-macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -311,6 +514,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B0D2DE651CC45B5500577F82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E90E614C1EA157A700E2DC19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E90E61651EA1607B00E2DC19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E90E617F1EA1617F00E2DC19 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,6 +583,45 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
+		E90E61611EA15FBE00E2DC19 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		E90E617B1EA1615F00E2DC19 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		E90E61911EA1623800E2DC19 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -385,6 +648,32 @@
 			files = (
 				46FAB5281CEFEFC30011CDF2 /* SignalProducer+Gloss.swift in Sources */,
 				B0889DDA1CF950E100EB48EA /* Response+Gloss.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E90E61491EA157A700E2DC19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E90E615F1EA15F5D00E2DC19 /* Response+Gloss.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E90E61621EA1607B00E2DC19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E90E61781EA1612E00E2DC19 /* Observable+Gloss.swift in Sources */,
+				E90E61791EA1613500E2DC19 /* Response+Gloss.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E90E617C1EA1617F00E2DC19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E90E61891EA161C400E2DC19 /* SignalProducer+Gloss.swift in Sources */,
+				E90E618A1EA161C700E2DC19 /* Response+Gloss.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +725,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -480,6 +770,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -505,7 +796,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.srogers.MoyaGloss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -527,7 +817,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.srogers.MoyaGloss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -550,6 +839,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.srogers.RxMoyaGloss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -572,6 +862,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.srogers.RxMoyaGloss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -594,6 +885,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.srogers.ReactiveMoyaGloss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -616,6 +908,175 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.srogers.ReactiveMoyaGloss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		E90E61531EA157A700E2DC19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = net.srogers.MoyaGloss;
+				PRODUCT_NAME = MoyaGloss;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E90E61541EA157A700E2DC19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = net.srogers.MoyaGloss;
+				PRODUCT_NAME = MoyaGloss;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		E90E616D1EA1607B00E2DC19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "RxMoyaGloss-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = net.srogers.RxMoyaGloss;
+				PRODUCT_NAME = RxMoyaGloss;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E90E616E1EA1607B00E2DC19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "RxMoyaGloss-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = net.srogers.RxMoyaGloss;
+				PRODUCT_NAME = RxMoyaGloss;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		E90E61871EA1617F00E2DC19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "ReactiveMoyaGloss-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = net.srogers.ReactiveMoyaGloss;
+				PRODUCT_NAME = ReactiveMoyaGloss;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E90E61881EA1617F00E2DC19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "ReactiveMoyaGloss-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = net.srogers.ReactiveMoyaGloss;
+				PRODUCT_NAME = ReactiveMoyaGloss;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -657,6 +1118,30 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		E90E61551EA157A700E2DC19 /* Build configuration list for PBXNativeTarget "MoyaGloss-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E90E61531EA157A700E2DC19 /* Debug */,
+				E90E61541EA157A700E2DC19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E90E616C1EA1607B00E2DC19 /* Build configuration list for PBXNativeTarget "RxMoyaGloss-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E90E616D1EA1607B00E2DC19 /* Debug */,
+				E90E616E1EA1607B00E2DC19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E90E61861EA1617F00E2DC19 /* Build configuration list for PBXNativeTarget "ReactiveMoyaGloss-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E90E61871EA1617F00E2DC19 /* Debug */,
+				E90E61881EA1617F00E2DC19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
