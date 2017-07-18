@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Moya-Gloss"
-  s.version          = "2.0.1"
+  s.version          = "2.0.2"
   s.summary          = "Convenience Gloss bindings for Moya."
   s.description      = <<-EOS
     [Gloss](https://github.com/hkellaway/Gloss) bindings for
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
 
   s.homepage         = "https://github.com/spxrogers/Moya-Gloss"
   s.license          = { :type => "MIT", :file => "LICENSE" }
-  s.author           = { "Steven Rogers" => "me@srogers.net" }
+  s.author           = { "steven rogers" => "me@srogers.net" }
   s.source           = { :git => "https://github.com/spxrogers/Moya-Gloss.git", :tag => s.version.to_s }
   s.social_media_url = "https://twitter.com/spxrogers"
 
