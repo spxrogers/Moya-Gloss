@@ -1,6 +1,7 @@
 # Change Log
 `Moya-Gloss` adheres to [Semantic Versioning](http://semver.org/).
 
+- [2.0.3](#203)
 - [2.0.2](#202)
 - [2.0.1](#201)
 - [2.0.0](#200)
@@ -10,6 +11,14 @@
 - [1.1.1](#111)
 - [1.1.0](#110)
 - [1.0.0](#100)
+
+---
+
+## [2.0.3](https://github.com/spxrogers/Moya-Gloss/releases/tag/2.0.3)
+
+#### Updated
+- Patch version release.
+- Namespaced `Decodable` protocol to `Gloss.Decodable` to fix Swift 4 errors.
 
 ---
 

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Moya-Gloss"
-  s.version          = "2.0.2"
+  s.version          = "2.0.3"
   s.summary          = "Convenience Gloss bindings for Moya."
   s.description      = <<-EOS
     [Gloss](https://github.com/hkellaway/Gloss) bindings for
