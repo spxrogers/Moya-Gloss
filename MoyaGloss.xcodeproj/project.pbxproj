@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		46FAB5271CEFEFC00011CDF2 /* Observable+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01E394B1CC44A9A009D9FC9 /* Observable+Gloss.swift */; };
 		46FAB5281CEFEFC30011CDF2 /* SignalProducer+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01E39481CC44A9A009D9FC9 /* SignalProducer+Gloss.swift */; };
+		B01744D51FB13D82001F9517 /* PrimitiveSequence+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01744D41FB13D82001F9517 /* PrimitiveSequence+Gloss.swift */; };
 		B01E393F1CC44A42009D9FC9 /* MoyaGloss.h in Headers */ = {isa = PBXBuildFile; fileRef = B01E393E1CC44A42009D9FC9 /* MoyaGloss.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B01E394D1CC44A9A009D9FC9 /* Response+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01E39491CC44A9A009D9FC9 /* Response+Gloss.swift */; };
 		B01E39901CC45ABC009D9FC9 /* RxMoyaGloss.h in Headers */ = {isa = PBXBuildFile; fileRef = B01E398F1CC45ABC009D9FC9 /* RxMoyaGloss.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -56,6 +57,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B01744D41FB13D82001F9517 /* PrimitiveSequence+Gloss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrimitiveSequence+Gloss.swift"; sourceTree = "<group>"; };
 		B01E393B1CC44A42009D9FC9 /* MoyaGloss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoyaGloss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B01E393E1CC44A42009D9FC9 /* MoyaGloss.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoyaGloss.h; sourceTree = "<group>"; };
 		B01E39401CC44A42009D9FC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				B01E394B1CC44A9A009D9FC9 /* Observable+Gloss.swift */,
+				B01744D41FB13D82001F9517 /* PrimitiveSequence+Gloss.swift */,
 			);
 			path = RxSwift;
 			sourceTree = "<group>";
@@ -456,11 +459,11 @@
 		B01E39321CC44A42009D9FC9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0910;
 				TargetAttributes = {
 					B01E393A1CC44A42009D9FC9 = {
 						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0910;
 					};
 					B01E398C1CC45ABC009D9FC9 = {
 						CreatedOnToolsVersion = 7.3;
@@ -636,6 +639,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B01E394D1CC44A9A009D9FC9 /* Response+Gloss.swift in Sources */,
+				B01744D51FB13D82001F9517 /* PrimitiveSequence+Gloss.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,14 +699,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -731,7 +741,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -747,14 +757,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -776,7 +792,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -802,6 +818,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.srogers.MoyaGloss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -823,6 +841,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.srogers.MoyaGloss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -845,7 +865,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.srogers.RxMoyaGloss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -868,7 +888,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.srogers.RxMoyaGloss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -891,7 +911,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.srogers.ReactiveMoyaGloss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -914,7 +934,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.srogers.ReactiveMoyaGloss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -997,7 +1017,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1025,7 +1045,7 @@
 				PRODUCT_NAME = RxMoyaGloss;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1054,7 +1074,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1082,7 +1102,7 @@
 				PRODUCT_NAME = ReactiveMoyaGloss;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

@@ -15,13 +15,13 @@ class SignalProducerGlossSpec: QuickSpec {
     let getBadObject = ExampleAPI.getBadObject
     let getBadFormat = ExampleAPI.getBadFormat
 
-    let steven = Person(json: ["name": "steven rogers", "age": 22])!
+    let steven = Person(json: ["name": "steven rogers", "age": 23])!
     let john = Person(json: ["name": "john doe"])!
     let people = [steven, john]
 
-    var provider: ReactiveSwiftMoyaProvider<ExampleAPI>!
-    beforeEach { 
-      provider = ReactiveSwiftMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.immediatelyStub)
+    var provider: Reactive<MoyaProvider<ExampleAPI>>!
+    beforeEach {
+      provider = MoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.immediatelyStub).reactive
     }
 
     // standard

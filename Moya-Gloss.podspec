@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/spxrogers/Moya-Gloss.git", :tag => s.version.to_s }
   s.social_media_url = "https://twitter.com/spxrogers"
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.10'
   s.watchos.deployment_target = '2.0'
   s.tvos.deployment_target = '9.0'
@@ -26,8 +26,8 @@ Pod::Spec.new do |s|
 
   s.subspec "Core" do |ss|
     ss.source_files  = "Source/*.swift"
-    ss.dependency "Moya", "~> 8.0"
-    ss.dependency "Gloss", "~> 1.2"
+    ss.dependency "Moya", "~> 10.0"
+    ss.dependency "Gloss", "~> 2.0.0-beta.2"
     ss.framework  = "Foundation"
   end
 
@@ -35,14 +35,14 @@ Pod::Spec.new do |s|
     ss.source_files = "Source/RxSwift/*.swift"
     ss.dependency "Moya-Gloss/Core"
     ss.dependency "Moya/RxSwift"
-    ss.dependency 'RxSwift', '~> 3.4'
+    ss.dependency 'RxSwift', '~> 4.0'
   end
 
   s.subspec "ReactiveSwift" do |ss|
     ss.source_files = "Source/ReactiveSwift/*.swift"
     ss.dependency "Moya-Gloss/Core"
     ss.dependency "Moya/ReactiveSwift"
-    ss.dependency 'ReactiveSwift', '~> 1.1'
+    ss.dependency 'ReactiveSwift', '~> 2.0'
   end
 
   s.subspec "ReactiveCocoa" do |ss|

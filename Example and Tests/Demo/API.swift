@@ -10,8 +10,8 @@ import Foundation
 import Moya
 
 let stubbedProvider = MoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.immediatelyStub)
-let rxStubbedProvider = RxMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.immediatelyStub)
-let racStubbedProvider = ReactiveSwiftMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.immediatelyStub)
+let rxStubbedProvider = stubbedProvider.rx
+let racStubbedProvider = stubbedProvider.reactive
 
 enum ExampleAPI {
   case getObject
@@ -23,6 +23,8 @@ enum ExampleAPI {
 }
 
 extension ExampleAPI: TargetType {
+
+  var headers: [String : String]? { return nil }
 
   var baseURL: URL { return URL(string: "http://srogers.net/rest")! }
 
@@ -77,7 +79,7 @@ extension ExampleAPI: TargetType {
   }
   
   var task: Task {
-    return .request
+    return .requestPlain
   }
 }
 

@@ -64,16 +64,14 @@ class ViewController: UIViewController {
     rxStubbedProvider.request(object)
       .mapObject(type: Person.self)
       .subscribe { (event) in
-        switch event {
-        case .next(let person):
-          self.text("Found person: \(person)")
-        case .error(let err):
-          self.text("Failure: \(err)")
-        default:
-          break
-        }
+      switch event {
+      case .success(let person):
+        self.text("Found person: \(person)")
+      case .error(let err):
+        self.text("Failure: \(err)")
       }
-      .addDisposableTo(disposeBag)
+    }
+    .disposed(by: disposeBag)
   }
 
   @IBAction func rxMapPeoplePressed(_ sender: UIButton) {
@@ -81,15 +79,13 @@ class ViewController: UIViewController {
       .mapArray(type: Person.self)
       .subscribe { (event) in
         switch event {
-        case .next(let people):
+        case .success(let people):
           self.text("Found people: \(people)")
         case .error(let err):
           self.text("Failure: \(err)")
-        default:
-          break
         }
       }
-      .addDisposableTo(disposeBag)
+      .disposed(by: disposeBag)
   }
 
   // MARK: - Moya with ReactiveCocoa Example

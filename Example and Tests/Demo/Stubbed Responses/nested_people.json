@@ -2,7 +2,7 @@
   "people": [
     {
       "name": "steven rogers",
-      "age": 22
+      "age": 23
     },
     {
       "name": "john doe"
@@ -13,7 +13,7 @@
       "people": [
         {
           "name": "steven rogers",
-          "age": 22
+          "age": 23
         },
         {
           "name": "john doe"

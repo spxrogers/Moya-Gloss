@@ -14,7 +14,7 @@ class ResponseGlossSpec: QuickSpec {
     let getBadObject = ExampleAPI.getBadObject
     let getBadFormat = ExampleAPI.getBadFormat
 
-    let steven = Person(json: ["name": "steven rogers", "age": 22])!
+    let steven = Person(json: ["name": "steven rogers", "age": 23])!
     let john = Person(json: ["name": "john doe"])!
     let people = [steven, john]
 

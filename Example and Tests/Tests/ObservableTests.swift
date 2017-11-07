@@ -16,13 +16,13 @@ class ObservableGlossSpec: QuickSpec {
     let getBadFormat = ExampleAPI.getBadFormat
     let disposeBag = DisposeBag()
 
-    let steven = Person(json: ["name": "steven rogers", "age": 22])!
+    let steven = Person(json: ["name": "steven rogers", "age": 23])!
     let john = Person(json: ["name": "john doe"])!
     let people = [steven, john]
 
-    var provider: RxMoyaProvider<ExampleAPI>!
+    var provider: Reactive<MoyaProvider<ExampleAPI>>!
     beforeEach {
-      provider = RxMoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.immediatelyStub)
+      provider = MoyaProvider<ExampleAPI>(stubClosure: MoyaProvider.immediatelyStub).rx
     }
 
     // standard
@@ -34,15 +34,15 @@ class ObservableGlossSpec: QuickSpec {
           .mapObject(type: Person.self)
           .subscribe { (event) in
             switch event {
-            case .next(let person):
+            case .success(let person):
               equal = steven == person
+              done()
             case .error(_):
               equal = false
-            case .completed:
               done()
             }
           }
-          .addDisposableTo(disposeBag)
+          .disposed(by: disposeBag)
       }
       expect(equal).to(beTruthy())
     }
@@ -55,15 +55,15 @@ class ObservableGlossSpec: QuickSpec {
           .mapArray(type: Person.self)
           .subscribe{ (event) in
             switch event {
-            case .next(let resultPeople):
+            case .success(let resultPeople):
               equal = people == resultPeople
+              done()
             case .error(_):
               equal = false
-            case .completed:
               done()
             }
           }
-          .addDisposableTo(disposeBag)
+          .disposed(by: disposeBag)
       }
       expect(equal).to(beTruthy())
     }
@@ -77,15 +77,15 @@ class ObservableGlossSpec: QuickSpec {
           .mapObject(type: Person.self, forKeyPath: "person")
           .subscribe { (event) in
             switch event {
-            case .next(let person):
+            case .success(let person):
               equal = steven == person
+              done()
             case .error(_):
               equal = false
-            case .completed:
               done()
             }
           }
-          .addDisposableTo(disposeBag)
+          .disposed(by: disposeBag)
       }
       expect(equal).to(beTruthy())
     }
@@ -98,15 +98,15 @@ class ObservableGlossSpec: QuickSpec {
           .mapObject(type: Person.self, forKeyPath: "multi.nested.person")
           .subscribe { (event) in
             switch event {
-            case .next(let person):
+            case .success(let person):
               equal = steven == person
+              done()
             case .error(_):
               equal = false
-            case .completed:
               done()
             }
           }
-          .addDisposableTo(disposeBag)
+          .disposed(by: disposeBag)
       }
       expect(equal).to(beTruthy())
     }
@@ -120,15 +120,15 @@ class ObservableGlossSpec: QuickSpec {
           .mapArray(type: Person.self, forKeyPath: "people")
           .subscribe{ (event) in
             switch event {
-            case .next(let resultPeople):
+            case .success(let resultPeople):
               equal = people == resultPeople
+              done()
             case .error(_):
               equal = false
-            case .completed:
               done()
             }
           }
-          .addDisposableTo(disposeBag)
+          .disposed(by: disposeBag)
       }
       expect(equal).to(beTruthy())
     }
@@ -141,15 +141,15 @@ class ObservableGlossSpec: QuickSpec {
           .mapArray(type: Person.self, forKeyPath: "multi.nested.people")
           .subscribe{ (event) in
             switch event {
-            case .next(let resultPeople):
+            case .success(let resultPeople):
               equal = people == resultPeople
+              done()
             case .error(_):
               equal = false
-            case .completed:
               done()
             }
           }
-          .addDisposableTo(disposeBag)
+          .disposed(by: disposeBag)
       }
       expect(equal).to(beTruthy())
     }
@@ -163,16 +163,15 @@ class ObservableGlossSpec: QuickSpec {
           .mapObject(type: Person.self)
           .subscribe{ (event) in
             switch event {
-            case .next(_):
+            case .success(_):
               failedWhenExpected = false
+              done()
             case .error(_):
               failedWhenExpected = true
               done()
-            case .completed:
-              done()
             }
           }
-          .addDisposableTo(disposeBag)
+          .disposed(by: disposeBag)
       }
       expect(failedWhenExpected).to(beTruthy())
     }
@@ -185,16 +184,15 @@ class ObservableGlossSpec: QuickSpec {
           .mapObject(type: Person.self)
           .subscribe{ (event) in
             switch event {
-            case .next(_):
+            case .success(_):
               failedWhenExpected = false
+              done()
             case .error(_):
               failedWhenExpected = true
               done()
-            case .completed:
-              done()
             }
           }
-          .addDisposableTo(disposeBag)
+          .disposed(by: disposeBag)
       }
       expect(failedWhenExpected).to(beTruthy())
     }
@@ -207,16 +205,15 @@ class ObservableGlossSpec: QuickSpec {
           .mapArray(type: Person.self)
           .subscribe{ (event) in
             switch event {
-            case .next(_):
+            case .success(_):
               failedWhenExpected = false
+              done()
             case .error(_):
               failedWhenExpected = true
               done()
-            case .completed:
-              done()
             }
           }
-          .addDisposableTo(disposeBag)
+          .disposed(by: disposeBag)
       }
       expect(failedWhenExpected).to(beTruthy())
     }
@@ -229,16 +226,15 @@ class ObservableGlossSpec: QuickSpec {
           .mapObject(type: Person.self, forKeyPath: "doesnotexist")
           .subscribe { (event) in
             switch event {
-            case .next(_):
+            case .success(_):
               failedWhenExpected = false
+              done()
             case .error(_):
               failedWhenExpected = true
               done()
-            case .completed:
-              done()
             }
           }
-          .addDisposableTo(disposeBag)
+          .disposed(by: disposeBag)
       }
       expect(failedWhenExpected).to(beTruthy())
     }
@@ -251,16 +247,15 @@ class ObservableGlossSpec: QuickSpec {
           .mapObject(type: Person.self, forKeyPath: "multi.whoops")
           .subscribe { (event) in
             switch event {
-            case .next(_):
+            case .success(_):
               failedWhenExpected = false
+              done()
             case .error(_):
               failedWhenExpected = true
               done()
-            case .completed:
-              done()
             }
           }
-          .addDisposableTo(disposeBag)
+          .disposed(by: disposeBag)
       }
       expect(failedWhenExpected).to(beTruthy())
     }
@@ -273,16 +268,15 @@ class ObservableGlossSpec: QuickSpec {
           .mapArray(type: Person.self, forKeyPath: "doesnotexist")
           .subscribe { (event) in
             switch event {
-            case .next(_):
+            case .success(_):
               failedWhenExpected = false
+              done()
             case .error(_):
               failedWhenExpected = true
               done()
-            case .completed:
-              done()
             }
           }
-          .addDisposableTo(disposeBag)
+          .disposed(by: disposeBag)
       }
       expect(failedWhenExpected).to(beTruthy())
     }
@@ -295,16 +289,15 @@ class ObservableGlossSpec: QuickSpec {
           .mapObject(type: Person.self, forKeyPath: "multi.whoops")
           .subscribe { (event) in
             switch event {
-            case .next(_):
+            case .success(_):
               failedWhenExpected = false
+              done()
             case .error(_):
               failedWhenExpected = true
               done()
-            case .completed:
-              done()
             }
           }
-          .addDisposableTo(disposeBag)
+          .disposed(by: disposeBag)
       }
       expect(failedWhenExpected).to(beTruthy())
     }

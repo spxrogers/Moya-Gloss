@@ -13,7 +13,7 @@ public extension Response {
   
   /// Maps response data into a model object implementing the Decodable protocol.
   /// Throws a JSONMapping error on failure.
-  public func mapObject<T: Gloss.Decodable>(_ type: T.Type) throws -> T {
+  public func mapObject<T: JSONDecodable>(_ type: T.Type) throws -> T {
     guard
       let json = try mapJSON() as? JSON,
       let result = T(json: json)
@@ -25,7 +25,7 @@ public extension Response {
   
   /// Maps nested response data into a model object implementing the Decodable protocol.
   /// Throws a JSONMapping error on failure.
-  public func mapObject<T: Gloss.Decodable>(_ type: T.Type, forKeyPath keyPath: String) throws -> T {
+  public func mapObject<T: JSONDecodable>(_ type: T.Type, forKeyPath keyPath: String) throws -> T {
     guard
       let json = try mapJSON() as? NSDictionary,
       let nested = json.value(forKeyPath: keyPath) as? JSON,
@@ -38,7 +38,7 @@ public extension Response {
   
   /// Maps the response data into an array of model objects implementing the Decodable protocol.
   /// Throws a JSONMapping error on failure.
-  public func mapArray<T: Gloss.Decodable>(_ type: T.Type) throws -> [T] {
+  public func mapArray<T: JSONDecodable>(_ type: T.Type) throws -> [T] {
     guard
       let json = try mapJSON() as? [JSON]
     else {
@@ -54,7 +54,7 @@ public extension Response {
   
   /// Maps the nested response data into an array of model objects implementing the Decodable protocol.
   /// Throws a JSONMapping error on failure.
-  public func mapArray<T: Gloss.Decodable>(_ type: T.Type, forKeyPath keyPath: String) throws -> [T] {
+  public func mapArray<T: JSONDecodable>(_ type: T.Type, forKeyPath keyPath: String) throws -> [T] {
     guard
       let json = try mapJSON() as? NSDictionary,
       let nested = json.value(forKeyPath: keyPath) as? [JSON]

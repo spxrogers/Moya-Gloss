@@ -14,7 +14,7 @@ public extension ObservableType where E == Response {
   
   /// Maps response data into an Observable of a type that implements the Decodable protocol.
   /// Observable .Errors's on failure.
-  public func mapObject<T: Gloss.Decodable>(type: T.Type) -> Observable<T> {
+  public func mapObject<T: JSONDecodable>(type: T.Type) -> Observable<T> {
     return flatMap { response -> Observable<T> in
       return Observable.just(try response.mapObject(T.self))
     }
@@ -22,7 +22,7 @@ public extension ObservableType where E == Response {
   
   /// Maps nested response data into an Observable of a type that implements the Decodable protocol.
   /// Observable .Errors's on failure.
-  public func mapObject<T: Gloss.Decodable>(type: T.Type, forKeyPath keyPath: String) -> Observable<T> {
+  public func mapObject<T: JSONDecodable>(type: T.Type, forKeyPath keyPath: String) -> Observable<T> {
     return flatMap { response -> Observable<T> in
       return Observable.just(try response.mapObject(T.self, forKeyPath: keyPath))
     }
@@ -30,7 +30,7 @@ public extension ObservableType where E == Response {
   
   /// Maps response data into an Observable of an array of a type that implements the Decodable protocol.
   /// Observable .Errors's on failure.
-  public func mapArray<T: Gloss.Decodable>(type: T.Type) -> Observable<[T]> {
+  public func mapArray<T: JSONDecodable>(type: T.Type) -> Observable<[T]> {
     return flatMap { (response) -> Observable<[T]> in
       return Observable.just(try response.mapArray(T.self))
     }
@@ -38,7 +38,7 @@ public extension ObservableType where E == Response {
   
   /// Maps nested response data into an Observable of an array of a type that implements the Decodable protocol.
   /// Observable .Errors's on failure.
-  public func mapArray<T: Gloss.Decodable>(type: T.Type, forKeyPath keyPath: String) -> Observable<[T]> {
+  public func mapArray<T: JSONDecodable>(type: T.Type, forKeyPath keyPath: String) -> Observable<[T]> {
     return flatMap { (response) -> Observable<[T]> in
       return Observable.just(try response.mapArray(T.self, forKeyPath: keyPath))
     }
