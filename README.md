@@ -49,7 +49,7 @@ Create a `Class` or `Struct` which implements the `Decodable` (or `Glossy`) prot
 import Foundation
 import Gloss
 
-struct Person: Decodable {
+struct Person: JSONDecodable {
 
   let name: String
   let age: Int?
@@ -105,15 +105,15 @@ provider.request(ExampleAPI.GetObject)
   // .mapObject(Person.self, forKeyPath: "multi.nested.person")
   .subscribe { (event) in
     switch event {
-    case .next(let person):
+    case .success(let person):
       print("Found person: \(person)")
+      break
     case .error(let error):
       print(error)
-    default:
       break
     }
   }
-  .addDisposableTo(your_preferred_dispose_bag)
+  .disposedBy(by: your_preferred_dispose_bag)
 ```
 
 ### 3. Example with ReactiveCocoa

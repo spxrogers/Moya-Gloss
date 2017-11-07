@@ -1,6 +1,7 @@
 # Change Log
 `Moya-Gloss` adheres to [Semantic Versioning](http://semver.org/).
 
+- [3.0.0](#300)
 - [2.0.3](#203)
 - [2.0.2](#202)
 - [2.0.1](#201)
@@ -11,6 +12,16 @@
 - [1.1.1](#111)
 - [1.1.0](#110)
 - [1.0.0](#100)
+
+---
+
+## [3.0.0](https://github.com/spxrogers/Moya-Gloss/releases/tag/3.0.0)
+
+#### Major Update
+- Swift 4 support 🎉
+- Gloss 2 support ✨
+- Moya 10 support 💯
+- RxSwift 4 & ReactiveSwift 2 support 👍👍
 
 ---
 
