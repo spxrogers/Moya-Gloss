@@ -1,3 +1,5 @@
+> ⚠️ **No longer maintained**
+
 Moya-Gloss
 ============
 [![CocoaPods](https://img.shields.io/cocoapods/v/Moya-Gloss.svg)](http://cocoapods.org/pods/Moya-Gloss)
